@@ -14,7 +14,7 @@ class OnboardContentRepositoryImpl extends OnboardContentRepository {
       fetchBuyerContents() async {
     try {
       List<OnboardContentEntity> buyerContentList =
-        await  api.fetchBuyerContents();
+          await api.fetchBuyerContents();
       return Right(buyerContentList);
     } catch (e) {
       return Left(UnKnownFailure());
@@ -22,11 +22,9 @@ class OnboardContentRepositoryImpl extends OnboardContentRepository {
   }
 
   @override
-  Future<Either<Failure, List<OnboardContentEntity>>>
-      fetchSellerContents() async {
+  Future<Either<Failure, List<OnboardContentEntity>>> onboardUser() async {
     try {
-      List<OnboardContentEntity> sellerContentList =
-          await api.fetchSellerContents();
+      List<OnboardContentEntity> sellerContentList = await api.onboardUser();
       return Right(sellerContentList);
     } catch (e) {
       print(e);

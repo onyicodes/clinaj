@@ -1,0 +1,19 @@
+
+ [
+    {
+      "title": "Find Trusted Doctors",
+      "subtitle": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.",
+      "imageUrl":"assets/images/splash/onboarding_image_1.png"
+    },
+    {
+      "title": "Choose Best Doctors",
+      "subtitle": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.",
+      "imageUrl":"assets/images/splash/onboarding_image_2.png"
+    },
+    {
+      "title": "Easy Appointments",
+      "subtitle": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.",
+      "imageUrl":"assets/images/splash/onboarding_image_3.png"
+    }
+
+]

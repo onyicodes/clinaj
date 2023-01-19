@@ -35,16 +35,12 @@ class OnboardingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    final userType = storeBox.read(CacheKeys.accountType);
-    accountType = userType;
-    if (accountType == AccountType.buyer) {
-      getBuyerContent();
-    } else {
-      getSellerContent();
-    }
+    
+    onboardUser();
+    
   }
 
-  getSellerContent() async {
+  onboardUser() async {
     final sellerData = await sellerContent.call(NoParams());
     sellerData.fold((l) => Get.snackbar('Oops!', 'An error occurred'), (r) {
       _contentList.value = r;

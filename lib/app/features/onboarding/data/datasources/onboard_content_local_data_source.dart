@@ -7,16 +7,16 @@ import 'package:get/get_connect/connect.dart';
 const baseUrl = 'https://www.olevelgurusapp.com/v3/index/languages';
 
 abstract class OnboardContentLocalDataSource extends GetConnect {
-  Future<List<OnboardContentModel>> fetchSellerContents();
+  Future<List<OnboardContentModel>> onboardUser();
   Future<List<OnboardContentModel>> fetchBuyerContents();
 }
 
 class OnboardContentLocalDataSourceImpl extends OnboardContentLocalDataSource {
 // Get request
   @override
-  Future<List<OnboardContentModel>> fetchSellerContents() async {
+  Future<List<OnboardContentModel>> onboardUser() async {
     final String response = await rootBundle
-        .loadString('assets/json_contents/onboarding/seller_contents.json');
+        .loadString('assets/json_contents/onboarding/onboard_data.json');
 
     final List<dynamic> jsonStringContentList;
     jsonStringContentList = jsonDecode(response);
