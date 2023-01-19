@@ -1,0 +1,19 @@
+
+ [
+    {
+      "title": "Welcome to Vuba Deals",
+      "subtitle": "Search, Save, Share",
+      "imageUrl":"assets/"
+    },
+    {
+      "title": "Discover amazing deals on the go",
+      "subtitle": "Buy 1, get 1 free group class",
+      "imageUrl":"assets/"
+    },
+    {
+      "title": "Share great deals with friends",
+      "subtitle": "Buy 1, get 1 free group class",
+      "imageUrl":"assets/"
+    }
+
+]

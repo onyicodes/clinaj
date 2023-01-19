@@ -1,0 +1,226 @@
+{
+    "success": true,
+    "message": "successful",
+    "data": [
+      {
+        "id": 1,
+        "name": "Luxury bag",
+        "description": "Simple bag for businesses",
+        "photo": "assets/images/deals/d1.jpeg",
+        "categoryId": 2,
+        "oldPrice": 0,
+        "newPrice": 1000,
+        "ratings": 4.5,
+        "locationId": 10,
+        "sellerId": 10,
+        "businessName":"MyBagBusiness",
+        "validFrom": "2023-01-31T00:17:43.741Z",
+        "validTo": "2023-12-31T00:17:43.741Z",
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+        "seller": {
+            "id": 10,
+            "firstName": "simoneon",
+            "lastName": "lanre",
+            "description": "Business owner",
+            "photo": "my photo",
+            "dob": "25-120-1992",
+            "businessName": "emeka laundry",
+            "businessType": "laundry",
+            "contact": "2 abakaliaka street",
+            "gender": "male",
+            "createdAt": "2022-12-30T23:28:53.649Z",
+            "updatedAt": "2022-12-31T00:39:49.717Z",
+            "userId": 12,
+            "phoneNumber": "080394858495"
+          },
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      },
+      {
+        "id": 2,
+        "name": "Ergonomic office chair",
+        "description": "Ergonomic office leather chair ",
+        "photo": "assets/images/deals/d2.jpg",
+        "categoryId": 2,
+        "oldPrice": 0,
+        "newPrice": 1000,
+        "ratings": 4.8,
+        "locationId": 10,
+        "sellerId": 10,
+        "businessName":"My Chair Business",
+        "validFrom": "2023-01-31T00:17:43.741Z",
+        "validTo": "2023-12-31T00:17:43.741Z",
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+        "seller": {
+            "id": 10,
+            "firstName": "simoneon",
+            "lastName": "lanre",
+            "description":"Business owner",
+            "photo": "my photo",
+            "dob": "25-120-1992",
+            "businessName": "emeka laundry",
+            "businessType": "laundry",
+            "contact": "2 abakaliaka street",
+            "gender": "male",
+            "createdAt": "2022-12-30T23:28:53.649Z",
+            "updatedAt": "2022-12-31T00:39:49.717Z",
+            "userId": 12,
+            "phoneNumber":"080394858495"
+          },
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      }
+      ,{
+        "id": 3,
+        "name": "Adjustable office table",
+        "description": "Simple adjustable office table ",
+        "photo": "assets/images/deals/d3.jpg",
+        "categoryId": 2,
+        "oldPrice": 0,
+        "newPrice": 1000,
+        "ratings": 5.0,
+        "locationId": 10,
+        "sellerId": 10,
+        "businessName":"My Table Business",
+        "validFrom": "2023-01-31T00:17:43.741Z",
+        "validTo": "2023-12-31T00:17:43.741Z",
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+        "seller": {
+            "id": 10,
+            "firstName": "simoneon",
+            "lastName": "lanre",
+            "description": "Business owner",
+            "photo": "my photo",
+            "dob": "25-120-1992",
+            "businessName": "emeka laundry",
+            "businessType": "laundry",
+            "contact": "2 abakaliaka street",
+            "gender": "male",
+            "createdAt": "2022-12-30T23:28:53.649Z",
+            "updatedAt": "2022-12-31T00:39:49.717Z",
+            "userId": 12,
+            "phoneNumber": "080394858495"
+          },
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      },
+      {
+        "id": 4,
+        "name": "Men sports shoes",
+        "description": "Light weight men shoes",
+        "photo": "assets/images/deals/d4.jpg",
+        "categoryId": 2,
+        "oldPrice": 0,
+        "newPrice": 1000,
+        "ratings": 5.0,
+        "locationId": 10,
+        "sellerId": 10,
+        "businessName":"My Shoe Business",
+        "validFrom": "2023-01-31T00:17:43.741Z",
+        "validTo": "2023-12-31T00:17:43.741Z",
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+        "seller": {
+            "id": 10,
+            "firstName": "simoneon",
+            "lastName": "lanre",
+            "description": "Business owner",
+            "photo": "my photo",
+            "dob": "25-120-1992",
+            "businessName": "emeka laundry",
+            "businessType": "laundry",
+            "contact": "2 abakaliaka street",
+            "gender": "male",
+            "createdAt": "2022-12-30T23:28:53.649Z",
+            "updatedAt": "2022-12-31T00:39:49.717Z",
+            "userId": 12,
+            "phoneNumber": "080394858495"
+          },
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      },
+      {
+        "id": 5,
+        "name": "Men senator wears",
+        "description": "High quality men's senator wears ",
+        "photo": "assets/images/deals/d5.jpg",
+        "categoryId": 2,
+        "oldPrice": 0,
+        "newPrice": 1000,
+        "ratings": 3.5,
+        "locationId": 10,
+        "sellerId": 10,
+        "businessName":"My Senator Business",
+        "validFrom": "2023-01-31T00:17:43.741Z",
+        "validTo": "2023-12-31T00:17:43.741Z",
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+        "seller": {
+            "id": 10,
+            "firstName": "simoneon",
+            "lastName": "lanre",
+            "description": "Business owner",
+            "photo": "my photo",
+            "dob": "25-120-1992",
+            "businessName": "emeka laundry",
+            "businessType": "laundry",
+            "contact": "2 abakaliaka street",
+            "gender": "male",
+            "createdAt": "2022-12-30T23:28:53.649Z",
+            "updatedAt": "2022-12-31T00:39:49.717Z",
+            "userId": 12,
+            "phoneNumber": "080394858495"
+          },
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      }
+    ]
+  }

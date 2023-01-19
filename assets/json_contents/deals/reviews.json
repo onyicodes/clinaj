@@ -1,0 +1,161 @@
+{
+    "success": true,
+    "message": "successful",
+    "data": {
+      "results": [
+        {
+          "id": 8,
+          "message": "this is not a good deal",
+          "type": "positive",
+          "rating": 2,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:43:51.524Z",
+          "updatedAt": "2023-01-08T02:43:51.524Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 9,
+          "message": "this is not a good deal",
+          "type": "critical",
+          "rating": 2,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:47:44.509Z",
+          "updatedAt": "2023-01-08T02:47:44.509Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 10,
+          "message": "this is not a good deal",
+          "type": "critical",
+          "rating": 3,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:47:52.978Z",
+          "updatedAt": "2023-01-08T02:47:52.978Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 11,
+          "message": "this is not a good deal",
+          "type": "positive",
+          "rating": 4,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:47:59.785Z",
+          "updatedAt": "2023-01-08T02:47:59.785Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 12,
+          "message": "this is not a good deal",
+          "type": "negative",
+          "rating": 1,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:48:05.233Z",
+          "updatedAt": "2023-01-08T02:48:05.233Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 13,
+          "message": "this is not a good deal",
+          "type": "negative",
+          "rating": 1.8,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:49:42.894Z",
+          "updatedAt": "2023-01-08T02:49:42.894Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        },
+        {
+          "id": 14,
+          "message": "this is not a good deal",
+          "type": "positive",
+          "rating": 4.5,
+          "customerId": 1,
+          "dealId": 1,
+          "createdAt": "2023-01-08T02:56:11.670Z",
+          "updatedAt": "2023-01-08T02:56:11.670Z",
+          "customer": {
+            "id": 1,
+            "firstName": "ade",
+            "lastName": "peter",
+            "photo": null,
+            "dob": "25-120-1992",
+            "userId": 13,
+            "createdAt": "2022-12-30T23:32:47.317Z",
+            "updatedAt": "2023-01-08T02:57:41.476Z",
+            "gender": "male"
+          }
+        }
+      ],
+      "pagination": {
+        "page": 0,
+        "size": 10,
+        "totalItems": 14,
+        "totalPages": 0
+      }
+    }
+  }
