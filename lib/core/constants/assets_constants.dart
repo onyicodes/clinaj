@@ -1,4 +1,4 @@
 class AssetsConstants {
-  static const String vubaVIcon = 'assets/images/icons/vuba_v_icon.png';
-  static const String vubaIcon = 'assets/images/icons/vuba_icon.png';
+  static const String clinajIcon = 'assets/svg/icons/logo.svg';
+  static const String clinajBg = 'assets/images/misc/bg_tiny.png';
 }

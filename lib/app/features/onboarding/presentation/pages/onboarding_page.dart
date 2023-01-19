@@ -11,8 +11,7 @@ class OnboardingPage extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
      TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
-    return Scaffold(
-      body: GetX<OnboardingController>(builder: (_) {
+    return  GetX<OnboardingController>(builder: (_) {
         return _.contentList.isNotEmpty
             ? GetX<OnboardingController>(
       builder: (_) {
@@ -87,7 +86,6 @@ class OnboardingPage extends GetView<OnboardingController> {
       },
     )
             : const CircularProgressIndicator();
-      }),
-    );
+      });
   }
 }

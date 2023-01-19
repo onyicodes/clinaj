@@ -47,6 +47,7 @@ dependencies:
   shimmer: ^2.0.0
   font_awesome_flutter: ^9.2.0
   country_code_picker: ^2.0.2 
+  flutter_svg_provider: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +75,8 @@ flutter:
   assets:
     - assets/images/misc/
     - assets/images/splash/
+    - assets/svg/bg/
+    - assets/svg/icons/logo.svg
     - assets/json_contents/onboarding/
 
   # An image asset can refer to one or more resolution-specific "variants", see

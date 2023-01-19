@@ -1,6 +1,9 @@
 import 'package:clinaj/app/features/splash_screen/presentation/controllers/splash_screen_controller.dart';
+import 'package:clinaj/core/constants/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svgProvider;
 import 'package:get/get.dart';
 
 class SplashScreenPage extends GetView<SplashScreenController> {
@@ -13,20 +16,22 @@ class SplashScreenPage extends GetView<SplashScreenController> {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return GetBuilder<SplashScreenController>(
       builder: (_) => Scaffold(
-        extendBodyBehindAppBar: true,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: Image.asset('assets/images/icons/vuba_icon.png')))
-          ],
-        ),
-      ),
+          body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(AssetsConstants.clinajBg),
+                fit: BoxFit.fill,
+              ),
+            ),
+            child: Center(
+              child: SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: SvgPicture.asset(AssetsConstants.clinajIcon)),
+            ),
+          )),
     );
   }
 }
