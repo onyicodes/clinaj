@@ -12,6 +12,6 @@ class AuthService extends GetxService {
 
   bool hasOnboarded() {
     bool? userOnboarded = storeBox.read(CacheKeys.hasOnboarded);
-    return userOnboarded ?? false;
+    return  false;
   }
 }

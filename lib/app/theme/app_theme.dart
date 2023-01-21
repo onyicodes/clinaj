@@ -140,7 +140,7 @@ class ClinajAppTheme {
         ),
         indicatorColor: const Color(0xff1F88C1),
         secondaryHeaderColor: const Color(0xff4d4d4d),
-        primaryColor: const Color(0xff0E3692),
+        primaryColor: const Color(0xff0EBE7F),
         primaryColorDark: const Color(0xff00374E),
         cardColor: const Color(0xfffdfdfd),
         canvasColor: const Color(0xffefefef),

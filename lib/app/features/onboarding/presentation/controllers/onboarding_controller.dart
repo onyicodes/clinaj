@@ -7,6 +7,7 @@ import 'package:clinaj/app/routes/app_pages.dart';
 import 'package:clinaj/core/constants/general_constants.dart';
 import 'package:clinaj/core/constants/keys/cache_keys.dart';
 import 'package:clinaj/core/parameters/no_params.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -19,6 +20,8 @@ class OnboardingController extends GetxController {
       {required this.buyerContent,
       required this.sellerContent,
       required this.storeBox});
+
+   final PageController pageController = PageController();
 
   final _accountType = ''.obs;
   final _page = 0.obs;

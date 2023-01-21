@@ -16,6 +16,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return GetBuilder<SplashScreenController>(
       builder: (_) => Scaffold(
+        extendBodyBehindAppBar: true,
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
