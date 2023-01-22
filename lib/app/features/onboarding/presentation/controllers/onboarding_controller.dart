@@ -58,7 +58,7 @@ class OnboardingController extends GetxController {
   }
 
   toSignupPage() async {
-    storeBox.write(CacheKeys.hasOnboarded, true);
-    Get.offAndToNamed(Routes.signin);
+   // storeBox.write(CacheKeys.hasOnboarded, true);
+    Get.offAndToNamed(Routes.signup);
   }
 }

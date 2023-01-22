@@ -8,33 +8,12 @@ class SocialSignups extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(20.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GetBuilder<SignupController>(
-            builder: (_) => Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: InkWell(
-                onTap: () {
-                  _.appleSignup();
-                },
-                child: Container(
-                    height: 50,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25))),
-                    child: const Center(
-                        child: FaIcon(
-                      FontAwesomeIcons.apple,
-                      size: 40,
-                    ))),
-              ),
-            ),
-          ),
           GetBuilder<SignupController>(
             builder: (_) => Padding(
               padding: const EdgeInsets.all(4.0),
@@ -43,17 +22,23 @@ class SocialSignups extends StatelessWidget {
                   _.facebookSignup();
                 },
                 child: Container(
-                    height: 50,
-                    width: 100,
+                    height: 55,
+                    width: 160,
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25))),
-                    child: const Center(
-                        child: FaIcon(
-                      FontAwesomeIcons.facebook,
-                      size: 40,
-                    ))),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Center(
+                            child: FaIcon(
+                          FontAwesomeIcons.facebook,
+                          size: 40,
+                        )),
+                        const SizedBox(width:8 ,),
+                        Text('Facebook', style: primaryTextTheme.bodyText1,)
+                      ],
+                    )),
               ),
             ),
           ),
@@ -65,17 +50,22 @@ class SocialSignups extends StatelessWidget {
                   _.googleSignup();
                 },
                 child: Container(
-                    height: 50,
-                    width: 100,
+                    height: 55,
+                    width: 160,
                     decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25))),
-                    child: const Center(
-                        child: FaIcon(
-                      FontAwesomeIcons.google,
-                      size: 40,
-                    ))),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      const  FaIcon(
+                          FontAwesomeIcons.google,
+                          size: 40,
+                        ),
+                        const SizedBox(width:8 ,),
+                        Text('Google', style: primaryTextTheme.bodyText1,)
+                      ],
+                    )),
               ),
             ),
           )

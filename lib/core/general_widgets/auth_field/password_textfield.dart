@@ -54,65 +54,44 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         myNode.requestFocus();
       },
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+         padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
                   border: Border.all(color:widget.errorText.isNotEmpty?Colors.red: hasFocus
                           ? Colors.green
                           : Theme.of(context).dividerColor),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 6.0),
-                    child: Text(widget.label, style: primaryTextTheme.headline3),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: TextField(
-                      focusNode: myNode,
-                      controller: widget.controller,
-                      onChanged: widget.onChanged,
-                      textCapitalization: TextCapitalization.words,
-                      autocorrect: false,
-                      obscureText: widget.obscurePassword ? true : false,
-                      style: primaryTextTheme.bodyText1,
-                      decoration: InputDecoration(
-                          prefixIconConstraints:
-                              const BoxConstraints(minWidth: 295, minHeight: 0),
-                          suffixIcon: IconButton(
-                              onPressed: widget.toggleObscureText,
-                              icon: FaIcon(widget.obscurePassword
-                                  ? FontAwesomeIcons.eyeSlash
-                                  : FontAwesomeIcons.eye)),
-                          //errorText: widget.errorText.isEmpty ? null : widget.errorText,
-                          hintText: widget.hintText,
-                          hintStyle: primaryTextTheme.bodyText1!
-                              .copyWith(color: const Color(0xffbebfbf)),
-                          focusedBorder: const OutlineInputBorder(
-                              borderSide: BorderSide.none),
-                          contentPadding: const EdgeInsets.only(
-                              left: 0.0, top: 16.0, bottom: 16.0, right: 16.0),
-                          border: const OutlineInputBorder(
-                              borderSide: BorderSide.none)),
-                    ),
-                  ),
-                ],
+                  borderRadius: BorderRadius.circular(12)),
+              child: TextField(
+                focusNode: myNode,
+                controller: widget.controller,
+                onChanged: widget.onChanged,
+                textCapitalization: TextCapitalization.words,
+                autocorrect: false,
+                obscureText: widget.obscurePassword ? true : false,
+                style: primaryTextTheme.bodyText1,
+                decoration: InputDecoration(
+                    prefixIconConstraints:
+                        const BoxConstraints(minWidth: 295, minHeight: 0),
+                    suffixIcon: IconButton(
+                        onPressed: widget.toggleObscureText,
+                        icon: FaIcon(widget.obscurePassword
+                            ? FontAwesomeIcons.eyeSlash
+                            : FontAwesomeIcons.eye)),
+                    errorText: widget.errorText.isEmpty ? null : widget.errorText,
+                    hintText: widget.hintText,
+                    hintStyle: primaryTextTheme.bodyText1!
+                        .copyWith(color: const Color(0xffbebfbf)),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide.none),
+                    contentPadding: const EdgeInsets.all( 16.0),
+                    border: const OutlineInputBorder(
+                        borderSide: BorderSide.none)),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                widget.errorText,
-                style: primaryTextTheme.bodyText2!
-                    .copyWith(color: Theme.of(context).errorColor),
-              ),
-            ),
+            
             widget.validationWidget
           ],
         ),
