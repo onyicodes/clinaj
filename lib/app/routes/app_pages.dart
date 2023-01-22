@@ -1,5 +1,7 @@
 import 'package:clinaj/app/features/onboarding/presentation/bindings/onboard_binding.dart';
 import 'package:clinaj/app/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:clinaj/app/features/signup/presentation/bindings/signup_binding.dart';
+import 'package:clinaj/app/features/signup/presentation/pages/signup_page.dart';
 import 'package:clinaj/app/features/splash_screen/presentation/bindings/splash_binding.dart';
 import 'package:clinaj/app/features/splash_screen/presentation/pages/splash_screen_page.dart';
 import 'package:clinaj/app/getx_managers/middlewares/onboard_guard_middleware.dart';
@@ -19,5 +21,10 @@ abstract class AppPages {
         binding: OnboardingBinding(),
         transition: Transition.leftToRightWithFade,
         middlewares: [OnboardGuardMiddleware()]),
+     GetPage(
+        name: Routes.signup,
+        page: () =>const SignupPage(),
+        binding: SignupBinding(),
+        transition: Transition.leftToRightWithFade,),
   ];
 }
