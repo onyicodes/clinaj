@@ -86,6 +86,18 @@ class SignupController extends GetxController {
   }
 
   checkPassword({required String text}) {
+    //clears error text when user starts typing after an error occurred in the password field
+    if (passwordError.isNotEmpty) {
+          passwordError = '';
+      }
+    //checks if user has started typing to determine when to show the password field requirements
+    if (text.isEmpty) {
+        startedTypingPw = false;
+      }else
+      if (text.isNotEmpty && !startedTypingPw) {
+        startedTypingPw = true;
+      }
+      
     regexSpecialCharater.hasMatch(text)
         ? hasSpecialCharacter = true
         : hasSpecialCharacter = false;

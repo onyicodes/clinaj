@@ -79,15 +79,6 @@ class SignupPage extends GetView<SignupController> {
                   label: 'Password',
                   onChanged: (String value) {
                     _.checkPassword(text: value);
-                    if (_.passwordError.isNotEmpty) {
-                      _.passwordError = '';
-                    }
-                    if (value.isEmpty) {
-                      _.startedTypingPw = false;
-                    }else
-                    if (value.isNotEmpty && !_.startedTypingPw) {
-                      _.startedTypingPw = true;
-                    }
                     
                   },
                   validationWidget: const PasswordCheck(),
