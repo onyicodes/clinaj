@@ -9,7 +9,7 @@ class PasswordCheck extends StatelessWidget {
   Widget build(BuildContext context) {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return GetX<SignupController>(builder: (_) {
-      return Padding(
+      return _.startedTypingPw? Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +64,7 @@ class PasswordCheck extends StatelessWidget {
                 ])),
           ],
         ),
-      );
+      ): Container();
     });
   }
 }

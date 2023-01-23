@@ -2,6 +2,7 @@ import 'package:clinaj/app/features/signup/presentation/bindings/signup_binding.
 import 'package:clinaj/app/features/signup/presentation/controllers/signup_controller.dart';
 import 'package:clinaj/core/constants/error_texts.dart';
 import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
+import 'package:email_validator/email_validator.dart';
 
 final signupController = getSignupControllerSl<SignupController>();
 
@@ -15,6 +16,11 @@ class AuthFieldValidationPage {
 
     if (params.email.isEmpty) {
       signupController.emailError = AuthErrorMessage.emailEmpty;
+      validated = false;
+    }
+
+    if(!EmailValidator.validate(params.email)){
+      signupController.emailError = AuthErrorMessage.emailFormatWrong;
       validated = false;
     }
     if (params.password.isEmpty) {

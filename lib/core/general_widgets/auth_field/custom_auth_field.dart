@@ -53,38 +53,31 @@ class _CustomAuthFieldState extends State<CustomAuthField> {
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 20),
-        child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(
-                  color: widget.errorText.isNotEmpty?Colors.red:hasFocus
-                      ? Colors.green
-                      : Theme.of(context).dividerColor),
-              borderRadius: BorderRadius.circular(12)),
-          child: TextField(
-            controller: widget.controller,
-            focusNode: myNode,
-            textCapitalization: TextCapitalization.words,
-            autocorrect: false,
-            onChanged: widget.onChanged,
-            obscureText: widget.isPasswordField ? true : false,
-            style: primaryTextTheme.bodyText1,
-            decoration: InputDecoration(
-                prefixIconConstraints:
-                    const BoxConstraints(minWidth: 295, minHeight: 0),
-                errorText: widget.errorText.isEmpty
-                    ? null
-                    : widget.errorText,
-                hintText: widget.hintText,
-                hintStyle: primaryTextTheme.bodyText1!
-                    .copyWith(color: const Color(0xffbebfbf)),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                ),
-                contentPadding: const EdgeInsets.all(
-                    16.0),
-                border: const OutlineInputBorder(
-                    borderSide: BorderSide.none)),
-          ),
+        child: TextField(
+          controller: widget.controller,
+          focusNode: myNode,
+          textCapitalization: TextCapitalization.words,
+          autocorrect: false,
+          onChanged: widget.onChanged,
+          obscureText: widget.isPasswordField ? true : false,
+          style: primaryTextTheme.bodyText1,
+          decoration: InputDecoration(
+              prefixIconConstraints:
+                  const BoxConstraints(minWidth: 295, minHeight: 0),
+              errorText: widget.errorText.isEmpty
+                  ? null
+                  : widget.errorText,
+              hintText: widget.hintText,
+              hintStyle: primaryTextTheme.bodyText1!
+                  .copyWith(color: const Color(0xffbebfbf)),
+              focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green),
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
+                contentPadding: const EdgeInsets.all( 16.0),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color:Theme.of(context).dividerColor ),
+                    borderRadius:const BorderRadius.all(Radius.circular(12))
+                    )),
         ),
       ),
     );

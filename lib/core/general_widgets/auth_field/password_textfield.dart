@@ -58,38 +58,34 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color:widget.errorText.isNotEmpty?Colors.red: hasFocus
-                          ? Colors.green
-                          : Theme.of(context).dividerColor),
-                  borderRadius: BorderRadius.circular(12)),
-              child: TextField(
-                focusNode: myNode,
-                controller: widget.controller,
-                onChanged: widget.onChanged,
-                textCapitalization: TextCapitalization.words,
-                autocorrect: false,
-                obscureText: widget.obscurePassword ? true : false,
-                style: primaryTextTheme.bodyText1,
-                decoration: InputDecoration(
-                    prefixIconConstraints:
-                        const BoxConstraints(minWidth: 295, minHeight: 0),
-                    suffixIcon: IconButton(
-                        onPressed: widget.toggleObscureText,
-                        icon: FaIcon(widget.obscurePassword
-                            ? FontAwesomeIcons.eyeSlash
-                            : FontAwesomeIcons.eye)),
-                    errorText: widget.errorText.isEmpty ? null : widget.errorText,
-                    hintText: widget.hintText,
-                    hintStyle: primaryTextTheme.bodyText1!
-                        .copyWith(color: const Color(0xffbebfbf)),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide.none),
-                    contentPadding: const EdgeInsets.all( 16.0),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide.none)),
-              ),
+            TextField(
+              focusNode: myNode,
+              controller: widget.controller,
+              onChanged: widget.onChanged,
+              textCapitalization: TextCapitalization.words,
+              autocorrect: false,
+              obscureText: widget.obscurePassword ? true : false,
+              style: primaryTextTheme.bodyText1,
+              decoration: InputDecoration(
+                  prefixIconConstraints:
+                      const BoxConstraints(minWidth: 295, minHeight: 0),
+                  suffixIcon: IconButton(
+                      onPressed: widget.toggleObscureText,
+                      icon: FaIcon(widget.obscurePassword
+                          ? FontAwesomeIcons.eyeSlash
+                          : FontAwesomeIcons.eye)),
+                  errorText: widget.errorText.isEmpty ? null : widget.errorText,
+                  hintText: widget.hintText,
+                  hintStyle: primaryTextTheme.bodyText1!
+                      .copyWith(color: const Color(0xffbebfbf)),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green),
+                      borderRadius: BorderRadius.all(Radius.circular(12))),
+                  contentPadding: const EdgeInsets.all( 16.0),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color:Theme.of(context).dividerColor ),
+                      borderRadius:const BorderRadius.all(Radius.circular(12))
+                      )),
             ),
             
             widget.validationWidget

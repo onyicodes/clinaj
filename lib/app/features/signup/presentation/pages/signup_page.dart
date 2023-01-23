@@ -15,34 +15,41 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignupPage extends GetView<SignupController> {
- const  SignupPage({Key? key}) : super(key: key);
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return Scaffold(
       body: GetX<SignupController>(builder: (_) {
-        return  Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(AssetsConstants.clinajBg),
-                  fit: BoxFit.fill,
-                ),
-              ),
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AssetsConstants.clinajBg),
+              fit: BoxFit.fill,
+            ),
+          ),
           child: ListView(
             children: [
               const SizedBox(
                 height: 100,
               ),
               const CustomListSpacing(isMajorSpacing: true),
-              Text('Join us to start searching',textAlign: TextAlign.center, style: primaryTextTheme.headline2,),
-              const  CustomListSpacing(isMajorSpacing: false),
-              Text('You can search c ourse, apply course and find scholarship for abroad studies', textAlign: TextAlign.center, style: primaryTextTheme.bodyText1,),
+              Text(
+                'Join us to start searching',
+                textAlign: TextAlign.center,
+                style: primaryTextTheme.headline2,
+              ),
+              const CustomListSpacing(isMajorSpacing: false),
+              Text(
+                'You can search c ourse, apply course and find scholarship for abroad studies',
+                textAlign: TextAlign.center,
+                style: primaryTextTheme.bodyText1,
+              ),
               const CustomListSpacing(isMajorSpacing: true),
               const SocialSignups(),
-              
               CustomAuthField(
                   controller: _.emailAddressController,
                   hintText: 'abc@example.com',
@@ -54,7 +61,6 @@ class SignupPage extends GetView<SignupController> {
                     }
                   },
                   inputType: TextInputType.emailAddress),
-             
               CustomAuthField(
                   controller: _.userNameController,
                   hintText: 'Name',
@@ -76,15 +82,21 @@ class SignupPage extends GetView<SignupController> {
                     if (_.passwordError.isNotEmpty) {
                       _.passwordError = '';
                     }
+                    if (value.isEmpty) {
+                      _.startedTypingPw = false;
+                    }else
+                    if (value.isNotEmpty && !_.startedTypingPw) {
+                      _.startedTypingPw = true;
+                    }
+                    
                   },
-                  validationWidget:const PasswordCheck(),
+                  validationWidget: const PasswordCheck(),
                   toggleObscureText: () {
                     _.obscurePasswordText = !_.obscurePasswordText;
                   },
                   hintText: '***********'),
-             
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(20.0),
                 child: CustomButton(
                   label: 'Sign Up',
                   onPressed: () {
@@ -98,7 +110,6 @@ class SignupPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

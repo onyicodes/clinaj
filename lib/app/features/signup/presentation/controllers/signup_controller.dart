@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:clinaj/app/features/signup/domain/usecases/email_signup_usecase.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
+import 'package:clinaj/core/constants/error_texts.dart';
 import 'package:clinaj/core/constants/failure_to_error_message.dart';
 import 'package:clinaj/core/constants/keys/cache_keys.dart';
 import 'package:clinaj/core/constants/request_status.dart';
@@ -13,13 +14,10 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-
 class SignupController extends GetxController {
-  final TextEditingController phoneController = TextEditingController();
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController emailAddressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
 
   final FlutterSecureStorage secureStorage;
 
@@ -44,7 +42,8 @@ class SignupController extends GetxController {
   final _userNameError = ''.obs;
   final _passwordError = ''.obs;
   final _emailError = ''.obs;
-  final _countryDialCode = '+234'.obs;
+  final _startedTypingPw = false.obs;
+  final _validPasswordField = false.obs;
 
   final _has8Characters = false.obs;
   final _hasUppercase = false.obs;
@@ -57,8 +56,9 @@ class SignupController extends GetxController {
   String get userNameError => _userNameError.value;
   String get passwordError => _passwordError.value;
   String get emailError => _emailError.value;
-  String get countryDialCode => _countryDialCode.value;
   RequestStatus get requestStatus => _requestStatus.value;
+  bool get startedTypingPw => _startedTypingPw.value;
+  bool get validPasswordField => _validPasswordField.value;
 
   bool get has8Characters => _has8Characters.value;
   bool get hasUppercase => _hasUppercase.value;
@@ -72,7 +72,8 @@ class SignupController extends GetxController {
   set passwordError(value) => _passwordError.value = value;
   set emailError(value) => _emailError.value = value;
   set requestStatus(value) => _requestStatus.value = value;
-  set countryDialCode(value) => _countryDialCode.value = value;
+  set startedTypingPw(value) => _startedTypingPw.value = value;
+  set validPasswordField(value) => _validPasswordField.value = value;
 
   set has8Characters(value) => _has8Characters.value = value;
   set hasUppercase(value) => _hasUppercase.value = value;
@@ -101,36 +102,49 @@ class SignupController extends GetxController {
         ? hasLowercase = true
         : hasLowercase = false;
     regexHasNumber.hasMatch(text) ? hasNumber = true : hasNumber = false;
-    print(has8Characters);
+    if (has8Characters &&
+        hasUppercase &&
+        hasLowercase &&
+        hasNumber &&
+        hasSpecialCharacter) {
+      validPasswordField = true;
+    } else {
+      validPasswordField = false;
+    }
   }
 
   Future<void> signup() async {
     requestStatus = RequestStatus.loading;
-    final String role = storeBox.read(CacheKeys.accountType);
     SignupParams params = SignupParams(
-        email: emailAddressController.text,
-        userName: userNameController.text,
-        phone: phoneController.text,
-        password: passwordController.text,
-        countryDialCode: countryDialCode,
-        role: role);
+      email: emailAddressController.text,
+      userName: userNameController.text,
+      password: passwordController.text,
+    );
     await authFieldValidationPage
         .validateEmailSignupData(params: params)
         .then((validated) async {
       if (validated) {
-        final failOrSignup = await emailSignupUsecase(params);
-        failOrSignup.fold((fail) {
+        if (validPasswordField) {
+          final failOrSignup = await emailSignupUsecase(params);
+          failOrSignup.fold((fail) {
+            customSnackbar(
+                title: 'error', message: mapFailureToErrorMessage(fail));
+            requestStatus = RequestStatus.error;
+          }, (token) {
+            requestStatus = RequestStatus.success;
+            secureStorage.write(
+                key: CacheKeys.username, value: userNameController.text);
+            secureStorage.write(
+                key: CacheKeys.password, value: passwordController.text);
+            print(token);
+            // Get.toNamed(Routes.verifycode, arguments: token);
+          });
+        } else {
+          passwordError = AuthErrorMessage.passwordInsecure;
           customSnackbar(
-              title: 'error', message: mapFailureToErrorMessage(fail));
+              title: 'Error', message: 'Check password field requirements');
           requestStatus = RequestStatus.error;
-        }, (token) {
-          requestStatus = RequestStatus.success;
-          secureStorage.write(
-              key: CacheKeys.username, value: userNameController.text);
-          secureStorage.write(
-              key: CacheKeys.password, value: passwordController.text);
-          Get.toNamed(Routes.verifycode, arguments: token);
-        });
+        }
       } else {
         requestStatus = RequestStatus.error;
       }

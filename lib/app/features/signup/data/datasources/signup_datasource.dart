@@ -20,8 +20,6 @@ class SignupDataProviderImpl extends SignupDataProvider {
 
     signupField = {
       'email': params.email,
-      'phone': params.phone,
-      'role': params.role,
       'username': params.userName,
       'password': params.password
     };

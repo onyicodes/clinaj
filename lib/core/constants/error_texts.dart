@@ -1,13 +1,12 @@
 class AuthErrorMessage {
   static const String emailEmpty = 'Email field cannot be empty';
   static const String fieldEmpty = 'This field is required';
-  static const String emailFormatWrong = 'Email format is wrong';
+  static const String emailFormatWrong = 'Enter a valid email address';
   static const String phoneEmpty = 'Phone number has not been entered';
   static const String phoneFormatWrong = 'wrong phone format entered';
   static const String userNameEmpty = 'Username is required';
   static const String passwordEmpty = 'Password is required';
-  static const String passwordFormatWrong =
-      'Password must be between 8 to 12 characters';
+  static const String passwordInsecure = 'Insecure password';
 }
 
 class GeneralErrorMessage {
