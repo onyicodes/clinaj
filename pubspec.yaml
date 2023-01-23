@@ -75,8 +75,10 @@ flutter:
   assets:
     - assets/images/misc/
     - assets/images/splash/
+    - assets/images/icons/
+    - assets/images/logo/
     - assets/svg/bg/
-    - assets/svg/icons/logo.svg
+    - assets/svg/icons/
     - assets/json_contents/onboarding/
 
   # An image asset can refer to one or more resolution-specific "variants", see

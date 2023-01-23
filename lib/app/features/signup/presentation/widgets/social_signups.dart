@@ -1,4 +1,5 @@
 import 'package:clinaj/app/features/signup/presentation/controllers/signup_controller.dart';
+import 'package:clinaj/core/constants/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -30,11 +31,7 @@ class SocialSignups extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Center(
-                            child: FaIcon(
-                          FontAwesomeIcons.facebook,
-                          size: 40,
-                        )),
+                        const Image(image: AssetImage(AssetsConstants.googleIcon)),
                         const SizedBox(width:8 ,),
                         Text('Facebook', style: primaryTextTheme.bodyText1,)
                       ],
@@ -58,10 +55,7 @@ class SocialSignups extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                      const  FaIcon(
-                          FontAwesomeIcons.google,
-                          size: 40,
-                        ),
+                      const   Image(image: AssetImage(AssetsConstants.fbIcon)),
                         const SizedBox(width:8 ,),
                         Text('Google', style: primaryTextTheme.bodyText1,)
                       ],

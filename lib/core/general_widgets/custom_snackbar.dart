@@ -11,7 +11,7 @@ customSnackbar(
   Get.snackbar(title, message,
       icon: Padding(
         padding: const EdgeInsets.all(4.0),
-        child: Image.asset(AssetsConstants.clinajIcon),
+        child: Image.asset(AssetsConstants.clinajLogo),
       ),
       duration: Duration(seconds: duration),
       snackPosition: snackPosition);

@@ -16,7 +16,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return GetBuilder<SplashScreenController>(
       builder: (_) => Scaffold(
-        extendBodyBehindAppBar: true,
+          extendBodyBehindAppBar: true,
           body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -26,11 +26,11 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: Center(
+            child: const Center(
               child: SizedBox(
                   width: 150,
                   height: 150,
-                  child: SvgPicture.asset(AssetsConstants.clinajIcon)),
+                  child: Image(image:AssetImage(AssetsConstants.clinajLogo))),
             ),
           )),
     );
