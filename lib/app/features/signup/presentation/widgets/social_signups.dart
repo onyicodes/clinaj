@@ -26,8 +26,9 @@ class SocialSignups extends StatelessWidget {
                     height: 55,
                     width: 160,
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(12)),
+                       color: Colors.white,
+                      boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 4, spreadRadius:2)],
+                      borderRadius: BorderRadius.circular(12)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -50,7 +51,8 @@ class SocialSignups extends StatelessWidget {
                     height: 55,
                     width: 160,
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 4, spreadRadius:2)],
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

@@ -149,7 +149,7 @@ class ClinajAppTheme {
         toggleableActiveColor: const Color(0xff1DCDFE),
         dialogBackgroundColor: Colors.white,
         drawerTheme: drawerTheme,
-        shadowColor: Colors.grey,
+        shadowColor: Colors.grey.shade300,
         scaffoldBackgroundColor: const Color(0xffFDFEFF),
         appBarTheme: const AppBarTheme(
             foregroundColor: Colors.black,
