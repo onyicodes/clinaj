@@ -79,7 +79,6 @@ class SignupPage extends GetView<SignupController> {
                   label: 'Password',
                   onChanged: (String value) {
                     _.checkPassword(text: value);
-                    
                   },
                   validationWidget: const PasswordCheck(),
                   toggleObscureText: () {
@@ -111,7 +110,7 @@ class SignupPage extends GetView<SignupController> {
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.toNamed(Routes.signin);
+                        _.goToSignIn();
                       },
                       child: Text(
                         'Login',

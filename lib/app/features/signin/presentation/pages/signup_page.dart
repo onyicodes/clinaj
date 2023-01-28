@@ -1,3 +1,4 @@
+import 'package:clinaj/app/features/signin/presentation/controllers/signin_controller.dart';
 import 'package:clinaj/app/features/signup/presentation/controllers/signup_controller.dart';
 import 'package:clinaj/app/features/signup/presentation/widgets/password_check.dart';
 import 'package:clinaj/app/features/signup/presentation/widgets/social_signups.dart';
@@ -18,7 +19,7 @@ class SigninPage extends GetView<SignupController> {
   Widget build(BuildContext context) {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
     return Scaffold(
-      body: GetX<SignupController>(builder: (_) {
+      body: GetX<SigninController>(builder: (_) {
         return Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -58,7 +59,6 @@ class SigninPage extends GetView<SignupController> {
                     }
                   },
                   inputType: TextInputType.emailAddress),
-              
               PasswordTextField(
                   controller: _.passwordController,
                   errorText: _.passwordError,
@@ -66,7 +66,6 @@ class SigninPage extends GetView<SignupController> {
                   label: 'Password',
                   onChanged: (String value) {
                     _.checkPassword(text: value);
-                    
                   },
                   validationWidget: const PasswordCheck(),
                   toggleObscureText: () {
@@ -88,16 +87,18 @@ class SigninPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
-               TextButton(
-                      onPressed: () {
-                        Get.toNamed(Routes.signin);
-                      },
-                      child: Text(
-                        'Forgot password',
-                        style: primaryTextTheme.headline4!
-                            .copyWith(color: Theme.of(context).primaryColor),
-                      )),
-             const SizedBox(height: 100,),
+              TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.signin);
+                  },
+                  child: Text(
+                    'Forgot password',
+                    style: primaryTextTheme.headline4!
+                        .copyWith(color: Theme.of(context).primaryColor),
+                  )),
+              const SizedBox(
+                height: 100,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -108,7 +109,7 @@ class SigninPage extends GetView<SignupController> {
                   ),
                   TextButton(
                       onPressed: () {
-                        Get.toNamed(Routes.signin);
+                        _.goToSignup();
                       },
                       child: Text(
                         'Join us',

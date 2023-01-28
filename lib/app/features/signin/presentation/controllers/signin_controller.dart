@@ -82,8 +82,8 @@ class SigninController extends GetxController {
   set hasNumber(value) => _hasNumber.value = value;
   set hasSpecialCharacter(value) => _hasSpecialCharacter.value = value;
 
-  Future<void> goToSignIn() async {
-    Get.toNamed(Routes.signin);
+  Future<void> goToSignup() async {
+    Get.toNamed(Routes.signup);
   }
 
   checkPassword({required String text}) {
