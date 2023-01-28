@@ -32,6 +32,7 @@ class SignupPage extends GetView<SignupController> {
             ),
           ),
           child: ListView(
+            shrinkWrap: true,
             children: [
               const SizedBox(
                 height: 100,
@@ -100,6 +101,7 @@ class SignupPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
+              const SizedBox(height: 50,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -113,7 +115,7 @@ class SignupPage extends GetView<SignupController> {
                         _.goToSignIn();
                       },
                       child: Text(
-                        'Login',
+                        'Sign in',
                         style: primaryTextTheme.headline4!
                             .copyWith(color: Theme.of(context).primaryColor),
                       ))

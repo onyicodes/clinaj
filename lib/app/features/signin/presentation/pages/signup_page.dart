@@ -73,9 +73,27 @@ class SigninPage extends GetView<SignupController> {
                   },
                   hintText: '***********'),
               Padding(
+                padding: const EdgeInsets.only(left:20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Get.toNamed(Routes.signin);
+                        },
+                        child: Text(
+                          'Forgot password',
+                          style: primaryTextTheme.headline4!
+                              .copyWith(color: Theme.of(context).primaryColor),
+                        )),
+                       const SizedBox()
+                  ],
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: CustomButton(
-                  label: 'Sign Up',
+                  label: 'Sign in',
                   onPressed: () {
                     _.signup();
                   },
@@ -87,18 +105,8 @@ class SigninPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.signin);
-                  },
-                  child: Text(
-                    'Forgot password',
-                    style: primaryTextTheme.headline4!
-                        .copyWith(color: Theme.of(context).primaryColor),
-                  )),
-              const SizedBox(
-                height: 100,
-              ),
+              
+              const SizedBox(height: 50,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
