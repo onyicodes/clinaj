@@ -8,11 +8,11 @@ import 'package:get/get_connect/connect.dart';
 
 const baseUrl = 'https://www.olevelgurusapp.com/v3/index/languages';
 
-abstract class SignupDataProvider extends GetConnect {
+abstract class SigninDataProvider extends GetConnect {
   Future<String> emailSignup({required SignupParams params});
 }
 
-class SignupDataProviderImpl extends SignupDataProvider {
+class SigninDataProviderImpl extends SigninDataProvider {
 // Get request
   @override
   Future<String> emailSignup({required SignupParams params}) async {

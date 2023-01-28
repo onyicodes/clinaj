@@ -1,14 +1,14 @@
-import 'package:clinaj/app/features/signup/data/datasources/signup_datasource.dart';
-import 'package:clinaj/app/features/signup/domain/repositories/signup_repository.dart';
+import 'package:clinaj/app/features/signin/data/datasources/signin_datasource.dart';
+import 'package:clinaj/app/features/signin/domain/repositories/signin_repository.dart';
 import 'package:clinaj/core/error/exceptions.dart';
 import 'package:clinaj/core/error/failures.dart';
 import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
 import 'package:dartz/dartz.dart';
 
-class SignupRepositoryImpl extends SignupRepository {
-  final SignupDataProvider dataProvider;
+class SigninRepositoryImpl extends SigninRepository {
+  final SigninDataProvider dataProvider;
 
-  SignupRepositoryImpl({required this.dataProvider});
+  SigninRepositoryImpl({required this.dataProvider});
 
   @override
   Future<Either<Failure, String>> emailSignup(

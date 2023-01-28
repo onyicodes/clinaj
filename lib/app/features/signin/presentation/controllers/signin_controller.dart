@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clinaj/app/features/signin/domain/usecases/email_signin_usecase.dart';
 import 'package:clinaj/app/features/signup/domain/usecases/email_signup_usecase.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
 import 'package:clinaj/core/constants/error_texts.dart';
@@ -14,17 +15,17 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class SignupController extends GetxController {
+class SigninController extends GetxController {
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController emailAddressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   final FlutterSecureStorage secureStorage;
 
-  final EmailSignupUsecase emailSignupUsecase;
+  final EmailSigninUsecase emailSignupUsecase;
   final AuthFieldValidationPage authFieldValidationPage;
   final GetStorage storeBox;
-  SignupController(
+  SigninController(
       {required this.emailSignupUsecase,
       required this.authFieldValidationPage,
       required this.secureStorage,

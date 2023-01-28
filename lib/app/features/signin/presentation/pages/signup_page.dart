@@ -11,8 +11,8 @@ import 'package:clinaj/core/general_widgets/custom_list_space.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignupPage extends GetView<SignupController> {
-  const SignupPage({Key? key}) : super(key: key);
+class SigninPage extends GetView<SignupController> {
+  const SigninPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
