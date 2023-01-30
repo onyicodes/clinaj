@@ -31,12 +31,6 @@ class SigninController extends GetxController {
       required this.secureStorage,
       required this.storeBox});
 
-  RegExp regexSpecialCharater = RegExp(r'^(?=.*?[!@#\$&*~])');
-  RegExp regexHas8Characters = RegExp(r'.{8,}$');
-  RegExp regexHasUppercase = RegExp(r'^(?=.*[A-Z])');
-  RegExp regexHasLowercase = RegExp(r'^(?=.*[a-z])');
-  RegExp regexHasNumber = RegExp(r'^(?=.*?[0-9])');
-
   final _obscurePasswordText = true.obs;
   final _requestStatus = RequestStatus.initial.obs;
   final _phoneError = ''.obs;
@@ -46,11 +40,6 @@ class SigninController extends GetxController {
   final _startedTypingPw = false.obs;
   final _validPasswordField = false.obs;
 
-  final _has8Characters = false.obs;
-  final _hasUppercase = false.obs;
-  final _hasLowercase = false.obs;
-  final _hasNumber = false.obs;
-  final _hasSpecialCharacter = false.obs;
 
   bool get obscurePasswordText => _obscurePasswordText.value;
   String get phoneError => _phoneError.value;
@@ -59,13 +48,6 @@ class SigninController extends GetxController {
   String get emailError => _emailError.value;
   RequestStatus get requestStatus => _requestStatus.value;
   bool get startedTypingPw => _startedTypingPw.value;
-  bool get validPasswordField => _validPasswordField.value;
-
-  bool get has8Characters => _has8Characters.value;
-  bool get hasUppercase => _hasUppercase.value;
-  bool get hasLowercase => _hasLowercase.value;
-  bool get hasNumber => _hasNumber.value;
-  bool get hasSpecialCharacter => _hasSpecialCharacter.value;
 
   set obscurePasswordText(value) => _obscurePasswordText.value = value;
   set phoneError(value) => _phoneError.value = value;
@@ -74,96 +56,44 @@ class SigninController extends GetxController {
   set emailError(value) => _emailError.value = value;
   set requestStatus(value) => _requestStatus.value = value;
   set startedTypingPw(value) => _startedTypingPw.value = value;
-  set validPasswordField(value) => _validPasswordField.value = value;
-
-  set has8Characters(value) => _has8Characters.value = value;
-  set hasUppercase(value) => _hasUppercase.value = value;
-  set hasLowercase(value) => _hasLowercase.value = value;
-  set hasNumber(value) => _hasNumber.value = value;
-  set hasSpecialCharacter(value) => _hasSpecialCharacter.value = value;
-
+ 
   Future<void> goToSignup() async {
     Get.toNamed(Routes.signup);
   }
 
-  checkPassword({required String text}) {
-    //clears error text when user starts typing after an error occurred in the password field
-    if (passwordError.isNotEmpty) {
-          passwordError = '';
-      }
-    //checks if user has started typing to determine when to show the password field requirements
-    if (text.isEmpty) {
-        startedTypingPw = false;
-      }else
-      if (text.isNotEmpty && !startedTypingPw) {
-        startedTypingPw = true;
-      }
-      
-    regexSpecialCharater.hasMatch(text)
-        ? hasSpecialCharacter = true
-        : hasSpecialCharacter = false;
-
-    regexHas8Characters.hasMatch(text)
-        ? has8Characters = true
-        : has8Characters = false;
-
-    regexHasUppercase.hasMatch(text)
-        ? hasUppercase = true
-        : hasUppercase = false;
-
-    regexHasLowercase.hasMatch(text)
-        ? hasLowercase = true
-        : hasLowercase = false;
-    regexHasNumber.hasMatch(text) ? hasNumber = true : hasNumber = false;
-    if (has8Characters &&
-        hasUppercase &&
-        hasLowercase &&
-        hasNumber &&
-        hasSpecialCharacter) {
-      validPasswordField = true;
-    } else {
-      validPasswordField = false;
-    }
+  Future<RequestStatus> signInUser({required String username, required String password}) async {
+    
+      SigninParams params = SigninParams(user: username, password: password);
+      final failOrSignup = await emailSigninUsecase(params);
+      failOrSignup.fold((fail) {
+        customSnackbar(title: "Error", message: mapFailureToErrorMessage(fail));
+        return Future.value(RequestStatus.error);
+      }, (signInModel) {
+        storeBox.write(CacheKeys.accessToken, signInModel.token);
+        storeBox.write(CacheKeys.userData, signInModel.user);
+        storeBox.write(CacheKeys.isLoggedIn, true);
+        return Future.value(RequestStatus.success);
+      });
+    return Future.value(RequestStatus.error);
   }
 
-  Future<void> signup() async {
+  Future<void> signin({required SigninParams params}) async {
     requestStatus = RequestStatus.loading;
-    SignupParams params = SignupParams(
-      email: emailAddressController.text,
-      userName: userNameController.text,
-      password: passwordController.text,
-    );
+    await Future.delayed(const Duration(milliseconds: 500));
     await authFieldValidationPage
-        .validateEmailSignupData(params: params)
+        .validateEmailSigninData(params: params)
         .then((validated) async {
       if (validated) {
-        if (validPasswordField) {
-          final failOrSignup = await emailSignupUsecase(params);
-          failOrSignup.fold((fail) {
-            customSnackbar(
-                title: 'error', message: mapFailureToErrorMessage(fail));
-            requestStatus = RequestStatus.error;
-          }, (token) {
-            requestStatus = RequestStatus.success;
-            secureStorage.write(
-                key: CacheKeys.username, value: userNameController.text);
-            secureStorage.write(
-                key: CacheKeys.password, value: passwordController.text);
-            print(token);
-            // Get.toNamed(Routes.verifycode, arguments: token);
-          });
-        } else {
-          passwordError = AuthErrorMessage.passwordInsecure;
-          customSnackbar(
-              title: 'Error', message: 'Check password field requirements');
-          requestStatus = RequestStatus.error;
-        }
+        requestStatus = signInUser(username: params.user, password: params.password);
       } else {
         requestStatus = RequestStatus.error;
       }
     });
   }
 
+  
+
+  
   appleSignup() {
     Get.toNamed(Routes.signup);
   }
