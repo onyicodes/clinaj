@@ -2,7 +2,7 @@ import 'package:clinaj/app/features/signin/data/datasources/signin_datasource.da
 import 'package:clinaj/app/features/signin/domain/repositories/signin_repository.dart';
 import 'package:clinaj/core/error/exceptions.dart';
 import 'package:clinaj/core/error/failures.dart';
-import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
+import 'package:clinaj/core/parameters/signup/signin_params.dart';
 import 'package:dartz/dartz.dart';
 
 class SigninRepositoryImpl extends SigninRepository {
@@ -12,9 +12,9 @@ class SigninRepositoryImpl extends SigninRepository {
 
   @override
   Future<Either<Failure, String>> emailSignup(
-      {required SignupParams params}) async {
+      {required SigninParams params}) async {
     try {
-      String token = await dataProvider.emailSignup(params: params);
+      String token = await dataProvider.emailSignin(params: params);
       return Right(token);
     } on ServerException {
       return Left(ServerFailure());

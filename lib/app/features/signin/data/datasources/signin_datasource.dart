@@ -3,28 +3,25 @@ import 'dart:convert';
 import 'package:clinaj/core/constants/api_url/api_url.dart';
 import 'package:clinaj/core/error/exceptions.dart';
 import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
+import 'package:clinaj/core/parameters/signup/signin_params.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_connect/connect.dart';
 
 const baseUrl = 'https://www.olevelgurusapp.com/v3/index/languages';
 
 abstract class SigninDataProvider extends GetConnect {
-  Future<String> emailSignup({required SignupParams params});
+  Future<String> emailSignin({required SigninParams params});
 }
 
 class SigninDataProviderImpl extends SigninDataProvider {
 // Get request
   @override
-  Future<String> emailSignup({required SignupParams params}) async {
+  Future<String> emailSignin({required SigninParams params}) async {
     Map<String, String> signupField;
 
-    signupField = {
-      'email': params.email,
-      'username': params.userName,
-      'password': params.password
-    };
+    signupField = {'email': params.email, 'password': params.password};
 
-    const String signupUrl = ApiUrls.baseUrl + ApiUrls.signin;
+    const String signinUrl = ApiUrls.baseUrl + ApiUrls.signin;
 
     final String dummyResponse = await rootBundle
         .loadString('assets/json_contents/auth/registration_response.json');

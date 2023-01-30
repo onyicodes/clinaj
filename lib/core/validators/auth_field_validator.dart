@@ -10,7 +10,6 @@ import 'package:email_validator/email_validator.dart';
 final signupController = getSignupControllerSl<SignupController>();
 final signinController = getSigninControllerSl<SigninController>();
 
-
 class AuthFieldValidationPage {
   Future<bool> validateEmailSignupData({required SignupParams params}) {
     bool validated = true;
@@ -24,7 +23,7 @@ class AuthFieldValidationPage {
       validated = false;
     }
 
-    if(!EmailValidator.validate(params.email)){
+    if (!EmailValidator.validate(params.email)) {
       signupController.emailError = AuthErrorMessage.emailFormatWrong;
       validated = false;
     }
@@ -36,15 +35,14 @@ class AuthFieldValidationPage {
     return Future.value(validated);
   }
 
-
   Future<bool> validateEmailSigninData({required SigninParams params}) {
     bool validated = true;
-    if (params.user.isEmpty) {
+    if (params.email.isEmpty) {
       signupController.emailError = AuthErrorMessage.fieldEmpty;
       validated = false;
     }
 
-    if (params.user.isEmpty) {
+    if (params.email.isEmpty) {
       signupController.emailError = AuthErrorMessage.phoneEmpty;
       validated = false;
     }
@@ -55,6 +53,4 @@ class AuthFieldValidationPage {
 
     return Future.value(validated);
   }
-
- 
 }

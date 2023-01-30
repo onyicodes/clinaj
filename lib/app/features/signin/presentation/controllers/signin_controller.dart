@@ -9,6 +9,7 @@ import 'package:clinaj/core/constants/keys/cache_keys.dart';
 import 'package:clinaj/core/constants/request_status.dart';
 import 'package:clinaj/core/general_widgets/custom_snackbar.dart';
 import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
+import 'package:clinaj/core/parameters/signup/signin_params.dart';
 import 'package:clinaj/core/validators/auth_field_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -22,7 +23,7 @@ class SigninController extends GetxController {
 
   final FlutterSecureStorage secureStorage;
 
-  final EmailSigninUsecase emailSignupUsecase;
+  final EmailSigninUsecase emailSigninUsecase;
   final AuthFieldValidationPage authFieldValidationPage;
   final GetStorage storeBox;
   SigninController(
@@ -40,7 +41,6 @@ class SigninController extends GetxController {
   final _startedTypingPw = false.obs;
   final _validPasswordField = false.obs;
 
-
   bool get obscurePasswordText => _obscurePasswordText.value;
   String get phoneError => _phoneError.value;
   String get userNameError => _userNameError.value;
@@ -56,24 +56,24 @@ class SigninController extends GetxController {
   set emailError(value) => _emailError.value = value;
   set requestStatus(value) => _requestStatus.value = value;
   set startedTypingPw(value) => _startedTypingPw.value = value;
- 
+
   Future<void> goToSignup() async {
     Get.toNamed(Routes.signup);
   }
 
-  Future<RequestStatus> signInUser({required String username, required String password}) async {
-    
-      SigninParams params = SigninParams(user: username, password: password);
-      final failOrSignup = await emailSigninUsecase(params);
-      failOrSignup.fold((fail) {
-        customSnackbar(title: "Error", message: mapFailureToErrorMessage(fail));
-        return Future.value(RequestStatus.error);
-      }, (signInModel) {
-        storeBox.write(CacheKeys.accessToken, signInModel.token);
-        storeBox.write(CacheKeys.userData, signInModel.user);
-        storeBox.write(CacheKeys.isLoggedIn, true);
-        return Future.value(RequestStatus.success);
-      });
+  Future<RequestStatus> signInUser(
+      {required String username, required String password}) async {
+    SigninParams params = SigninParams(email: username, password: password);
+    final failOrSignup = await emailSigninUsecase(params);
+    failOrSignup.fold((fail) {
+      customSnackbar(title: "Error", message: mapFailureToErrorMessage(fail));
+      return Future.value(RequestStatus.error);
+    }, (signInModel) {
+      storeBox.write(CacheKeys.accessToken, signInModel.token);
+      storeBox.write(CacheKeys.userData, signInModel.email);
+      storeBox.write(CacheKeys.isLoggedIn, true);
+      return Future.value(RequestStatus.success);
+    });
     return Future.value(RequestStatus.error);
   }
 
@@ -84,16 +84,14 @@ class SigninController extends GetxController {
         .validateEmailSigninData(params: params)
         .then((validated) async {
       if (validated) {
-        requestStatus = signInUser(username: params.user, password: params.password);
+        requestStatus =
+            signInUser(username: params.email, password: params.password);
       } else {
         requestStatus = RequestStatus.error;
       }
     });
   }
 
-  
-
-  
   appleSignup() {
     Get.toNamed(Routes.signup);
   }
