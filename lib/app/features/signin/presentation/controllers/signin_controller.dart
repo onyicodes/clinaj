@@ -1,14 +1,11 @@
 import 'dart:async';
 
 import 'package:clinaj/app/features/signin/domain/usecases/email_signin_usecase.dart';
-import 'package:clinaj/app/features/signup/domain/usecases/email_signup_usecase.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
-import 'package:clinaj/core/constants/error_texts.dart';
 import 'package:clinaj/core/constants/failure_to_error_message.dart';
 import 'package:clinaj/core/constants/keys/cache_keys.dart';
 import 'package:clinaj/core/constants/request_status.dart';
 import 'package:clinaj/core/general_widgets/custom_snackbar.dart';
-import 'package:clinaj/core/parameters/signup/email_signup_params.dart';
 import 'package:clinaj/core/parameters/signup/signin_params.dart';
 import 'package:clinaj/core/validators/auth_field_validator.dart';
 import 'package:flutter/material.dart';
@@ -61,16 +58,15 @@ class SigninController extends GetxController {
     Get.toNamed(Routes.signup);
   }
 
-
-  checkPasswordError(){
-     if (emailError.isNotEmpty) {
-         emailError = '';
-      }
+  checkPasswordError() {
+    if (emailError.isNotEmpty) {
+      emailError = '';
+    }
   }
 
   Future<RequestStatus> signInUser(
-      {required String username, required String password}) async {
-    SigninParams params = SigninParams(email: username, password: password);
+      {required String email, required String password}) async {
+    SigninParams params = SigninParams(email: email, password: password);
     final failOrSignup = await emailSigninUsecase(params);
     failOrSignup.fold((fail) {
       customSnackbar(title: "Error", message: mapFailureToErrorMessage(fail));
@@ -92,14 +88,16 @@ class SigninController extends GetxController {
         .then((validated) async {
       if (validated) {
         requestStatus =
-            signInUser(username: params.email, password: params.password);
+            signInUser(email: params.email, password: params.password);
+
+        if (requestStatus == RequestStatus.success) {
+          Get.offAndToNamed(Routes.home);
+        }
       } else {
         requestStatus = RequestStatus.error;
       }
     });
   }
-
-  
 
   facebookSignup() {
     Get.toNamed(Routes.signup);

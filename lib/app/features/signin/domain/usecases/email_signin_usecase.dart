@@ -1,4 +1,3 @@
-import 'package:clinaj/app/features/signin/data/model/signin_model.dart';
 import 'package:clinaj/app/features/signin/domain/entities/signin_entity.dart';
 import 'package:clinaj/app/features/signin/domain/repositories/signin_repository.dart';
 import 'package:clinaj/core/error/failures.dart';
