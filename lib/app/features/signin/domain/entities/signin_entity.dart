@@ -1,5 +1,5 @@
+import 'package:clinaj/core/entities/user_entity.dart';
 import 'package:equatable/equatable.dart';
-import 'package:vuba/core/entities/user_entity.dart';
 
 class SigninEntity extends Equatable {
   final String token;
