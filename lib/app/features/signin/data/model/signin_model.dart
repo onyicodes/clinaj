@@ -1,8 +1,7 @@
 // ignore_for_file: overridden_fields, annotate_overrides
 
 import 'package:clinaj/app/features/signin/domain/entities/signin_entity.dart';
-import 'package:vuba/app/features/sign_in/domain/entities/signin_entity.dart';
-import 'package:vuba/core/models/user_model.dart';
+import 'package:clinaj/core/models/user_model.dart';
 
 class SigninModel extends SigninEntity {
   final String token;

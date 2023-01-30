@@ -9,6 +9,7 @@ import 'package:clinaj/core/general_widgets/auth_field/custom_auth_field.dart';
 import 'package:clinaj/core/general_widgets/auth_field/password_textfield.dart';
 import 'package:clinaj/core/general_widgets/button_widget.dart';
 import 'package:clinaj/core/general_widgets/custom_list_space.dart';
+import 'package:clinaj/core/parameters/signup/signin_params.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,7 +66,7 @@ class SigninPage extends GetView<SignupController> {
                   obscurePassword: _.obscurePasswordText,
                   label: 'Password',
                   onChanged: (String value) {
-                    _.checkPassword(text: value);
+                    _.checkPasswordError();
                   },
                   validationWidget: const PasswordCheck(),
                   toggleObscureText: () {
@@ -95,7 +96,12 @@ class SigninPage extends GetView<SignupController> {
                 child: CustomButton(
                   label: 'Sign in',
                   onPressed: () {
-                    _.signup();
+                    _.signin(
+                       params: SigninParams(
+                     email: _.emailAddressController.text,
+                      password: _.passwordController.text,
+                    )
+                    );
                   },
                   radius: 12,
                   height: 55,

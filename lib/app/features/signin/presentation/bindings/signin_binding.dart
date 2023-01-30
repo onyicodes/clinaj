@@ -17,7 +17,7 @@ class SigninBinding implements Bindings {
   @override
   void dependencies() {
     getSigninControllerSl.lazyPut<SigninController>(
-        () => SigninController(emailSignupUsecase: getSigninControllerSl(), authFieldValidationPage: getSigninControllerSl(), storeBox: getSigninControllerSl(), secureStorage: getSigninControllerSl()));
+        () => SigninController(emailSigninUsecase: getSigninControllerSl(), authFieldValidationPage: getSigninControllerSl(), storeBox: getSigninControllerSl(), secureStorage: getSigninControllerSl()));
 
     getSigninControllerSl.lazyPut<EmailSigninUsecase>(
         () => EmailSigninUsecase(repository: getSigninControllerSl()));

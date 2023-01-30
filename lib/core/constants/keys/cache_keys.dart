@@ -6,4 +6,5 @@ class CacheKeys {
   static const password = 'password';
   static const username = 'username';
   static const email = 'username';
+  static const userData = 'userData';
 }

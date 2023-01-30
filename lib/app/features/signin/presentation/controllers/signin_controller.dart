@@ -27,7 +27,7 @@ class SigninController extends GetxController {
   final AuthFieldValidationPage authFieldValidationPage;
   final GetStorage storeBox;
   SigninController(
-      {required this.emailSignupUsecase,
+      {required this.emailSigninUsecase,
       required this.authFieldValidationPage,
       required this.secureStorage,
       required this.storeBox});
@@ -61,6 +61,13 @@ class SigninController extends GetxController {
     Get.toNamed(Routes.signup);
   }
 
+
+  checkPasswordError(){
+     if (emailError.isNotEmpty) {
+         emailError = '';
+      }
+  }
+
   Future<RequestStatus> signInUser(
       {required String username, required String password}) async {
     SigninParams params = SigninParams(email: username, password: password);
@@ -70,7 +77,7 @@ class SigninController extends GetxController {
       return Future.value(RequestStatus.error);
     }, (signInModel) {
       storeBox.write(CacheKeys.accessToken, signInModel.token);
-      storeBox.write(CacheKeys.userData, signInModel.email);
+      storeBox.write(CacheKeys.userData, signInModel.user);
       storeBox.write(CacheKeys.isLoggedIn, true);
       return Future.value(RequestStatus.success);
     });
@@ -92,9 +99,7 @@ class SigninController extends GetxController {
     });
   }
 
-  appleSignup() {
-    Get.toNamed(Routes.signup);
-  }
+  
 
   facebookSignup() {
     Get.toNamed(Routes.signup);
