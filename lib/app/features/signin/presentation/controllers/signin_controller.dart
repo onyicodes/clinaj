@@ -36,7 +36,6 @@ class SigninController extends GetxController {
   final _passwordError = ''.obs;
   final _emailError = ''.obs;
   final _startedTypingPw = false.obs;
-  final _validPasswordField = false.obs;
 
   bool get obscurePasswordText => _obscurePasswordText.value;
   String get phoneError => _phoneError.value;
@@ -63,6 +62,22 @@ class SigninController extends GetxController {
       emailError = '';
     }
   }
+
+  forgotPassword({required Widget bottomsheet}) {
+    Get.bottomSheet(bottomsheet);
+  }
+
+  goToPushToken({required Widget pinBottomsheet}) {
+    Get.back();
+    Get.bottomSheet(pinBottomsheet);
+  }
+
+  goToPResetPassword({required Widget resetPwBottomsheet}) {
+    Get.back();
+    Get.bottomSheet(resetPwBottomsheet);
+  }
+
+  verifyPin({required String pin}) {}
 
   Future<RequestStatus> signInUser(
       {required String email, required String password}) async {

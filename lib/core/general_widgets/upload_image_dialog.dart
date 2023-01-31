@@ -27,7 +27,7 @@ class UploadImageDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const BottomSheetBorderLine(bottomPosition: false),
+            const BottomSheetBorderLine(),
             const SizedBox(
               height: 8,
             ),
@@ -60,7 +60,6 @@ class UploadImageDialog extends StatelessWidget {
                     textColor: primaryTextTheme.headline1!.color!,
                     primaryTextTheme: primaryTextTheme),
             const SizedBox(height: 12),
-            const BottomSheetBorderLine(bottomPosition: true)
           ],
         ),
       ),

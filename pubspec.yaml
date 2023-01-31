@@ -49,6 +49,7 @@ dependencies:
   country_code_picker: ^2.0.2 
   flutter_svg_provider: ^1.0.3
   email_validator: ^2.1.17
+  pinput: ^2.2.16
 
 dev_dependencies:
   flutter_test:

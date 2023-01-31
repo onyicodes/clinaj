@@ -1,4 +1,5 @@
 import 'package:clinaj/app/features/signin/presentation/controllers/signin_controller.dart';
+import 'package:clinaj/app/features/signin/presentation/widgets/forgot_password_bottomsheet.dart';
 import 'package:clinaj/app/features/signup/presentation/controllers/signup_controller.dart';
 import 'package:clinaj/app/features/signup/presentation/widgets/password_check.dart';
 import 'package:clinaj/app/features/signup/presentation/widgets/social_signups.dart';
@@ -68,26 +69,25 @@ class SigninPage extends GetView<SignupController> {
                   onChanged: (String value) {
                     _.checkPasswordError();
                   },
-                  validationWidget: const PasswordCheck(),
                   toggleObscureText: () {
                     _.obscurePasswordText = !_.obscurePasswordText;
                   },
                   hintText: '***********'),
               Padding(
-                padding: const EdgeInsets.only(left:20.0),
+                padding: const EdgeInsets.only(left: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
                         onPressed: () {
-                          Get.toNamed(Routes.signin);
+                          _.forgotPassword(bottomsheet:const ForgotPassword());
                         },
                         child: Text(
                           'Forgot password',
                           style: primaryTextTheme.headline4!
                               .copyWith(color: Theme.of(context).primaryColor),
                         )),
-                       const SizedBox()
+                    const SizedBox()
                   ],
                 ),
               ),
@@ -97,11 +97,10 @@ class SigninPage extends GetView<SignupController> {
                   label: 'Sign in',
                   onPressed: () {
                     _.signin(
-                       params: SigninParams(
-                     email: _.emailAddressController.text,
+                        params: SigninParams(
+                      email: _.emailAddressController.text,
                       password: _.passwordController.text,
-                    )
-                    );
+                    ));
                   },
                   radius: 12,
                   height: 55,
@@ -111,8 +110,9 @@ class SigninPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
-              
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
