@@ -1,4 +1,4 @@
 class AccountType {
-  static const String seller = 'seller';
-  static const String buyer = 'buyer';
+  static const String doctor = 'doctor';
+  static const String user = 'user';
 }
