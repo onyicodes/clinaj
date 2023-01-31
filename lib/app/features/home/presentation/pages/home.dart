@@ -19,7 +19,7 @@ class Home extends GetView<HomeController> {
   }
   }
   List<Widget> pages =  [
-    Text('Home'),
+    Text('Explore'),
     Text('Favourites'),
     Text('Records'),
     Text('Chat')
@@ -36,22 +36,23 @@ class Home extends GetView<HomeController> {
                     Theme.of(context).bottomNavigationBarTheme.backgroundColor,
                 destinations: const [
                   NavigationDestination(
+                      icon: Icon(Icons.explore, color: Color(0xff0E3692)),
+                      label: 'Explore'),
+                  NavigationDestination(
                     icon: Icon(
                       Icons.favorite_rounded,
                       color: Color(0xff0E3692),
                     ),
                     label: 'Favourites',
                   ),
+                  
                   NavigationDestination(
-                      icon: Icon(Icons.explore, color: Color(0xff0E3692)),
-                      label: 'Deals'),
-                  NavigationDestination(
-                      icon: Icon(Icons.notifications_rounded,
+                      icon: Icon(Icons.menu_book_sharp,
                           color: Color(0xff0E3692)),
-                      label: 'Notifications'),
+                      label: 'Records'),
                   NavigationDestination(
-                      icon: Icon(Icons.person, color: Color(0xff0E3692)),
-                      label: 'Profile'),
+                      icon: Icon(Icons.message, color: Color(0xff0E3692)),
+                      label: 'Message'),
                 ],
                 labelBehavior:
                     NavigationDestinationLabelBehavior.onlyShowSelected,
