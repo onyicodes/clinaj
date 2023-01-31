@@ -1,3 +1,5 @@
+import 'package:clinaj/app/features/home/presentation/bindings/home_binding.dart';
+import 'package:clinaj/app/features/home/presentation/pages/home.dart';
 import 'package:clinaj/app/features/onboarding/presentation/bindings/onboard_binding.dart';
 import 'package:clinaj/app/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:clinaj/app/features/signin/presentation/bindings/signin_binding.dart';
@@ -6,6 +8,7 @@ import 'package:clinaj/app/features/signup/presentation/bindings/signup_binding.
 import 'package:clinaj/app/features/signup/presentation/pages/signup_page.dart';
 import 'package:clinaj/app/features/splash_screen/presentation/bindings/splash_binding.dart';
 import 'package:clinaj/app/features/splash_screen/presentation/pages/splash_screen_page.dart';
+import 'package:clinaj/app/getx_managers/middlewares/auth_guard_middlewares.dart';
 import 'package:clinaj/app/getx_managers/middlewares/onboard_guard_middleware.dart';
 import 'package:get/get.dart';
 part './app_routes.dart';
@@ -34,5 +37,10 @@ abstract class AppPages {
         binding: SigninBinding(),
         transitionDuration: const Duration(milliseconds: 300),
         transition: Transition.rightToLeft,),
+     GetPage(
+        name: Routes.home,
+        page: () => Home(),
+        binding: HomeBinding(),
+        middlewares: [AuthGuardMiddleware()]),
   ];
 }
