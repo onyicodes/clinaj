@@ -8,7 +8,7 @@ class AuthGuardMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    return authService.isLoggedIn() ? null : const RouteSettings(name: Routes.roles);
+    return !authService.isLoggedIn() ? null : const RouteSettings(name: Routes.onboarding);
   }
 
 }
