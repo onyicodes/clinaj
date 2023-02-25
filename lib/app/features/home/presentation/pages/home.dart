@@ -1,3 +1,4 @@
+import 'package:clinaj/app/features/explore/presentation/pages/explore_page.dart';
 import 'package:clinaj/app/features/home/presentation/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,14 +13,13 @@ class Home extends GetView<HomeController> {
   {
     SystemChrome.setSystemUIOverlayStyle( const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.white, // navigation bar color
-    statusBarColor: Colors.white, 
      statusBarBrightness: Brightness.light,
-     statusBarIconBrightness: Brightness.dark// status bar color
+     statusBarIconBrightness: Brightness.light// status bar color
   ));
   }
   }
   List<Widget> pages =  [
-    Text('Explore'),
+    ExplorePage(),
     Text('Favourites'),
     Text('Records'),
     Text('Chat')

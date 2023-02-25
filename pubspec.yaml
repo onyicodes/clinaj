@@ -46,10 +46,11 @@ dependencies:
   flutter_svg: ^1.1.6
   shimmer: ^2.0.0
   font_awesome_flutter: ^9.2.0
-  country_code_picker: ^2.0.2 
   flutter_svg_provider: ^1.0.3
   email_validator: ^2.1.17
-  pinput: ^2.2.16
+  pinput: ^2.2.31
+  country_picker: ^2.0.19
+  modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
   flutter_test:

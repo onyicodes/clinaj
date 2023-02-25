@@ -194,7 +194,7 @@ class ClinajAppTheme {
         selectedRowColor: const Color(0xff005a80),
         drawerTheme: darkThemeDrawerTheme,
         scaffoldBackgroundColor: darkThemeColor,
-        shadowColor: Colors.black87,
+        shadowColor: Colors.grey.shade300,
         iconTheme: darkIconTheme,
         appBarTheme: AppBarTheme(
             foregroundColor: Colors.black,

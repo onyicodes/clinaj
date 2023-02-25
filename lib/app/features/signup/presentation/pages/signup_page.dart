@@ -10,7 +10,6 @@ import 'package:clinaj/core/general_widgets/auth_field/password_textfield.dart';
 import 'package:clinaj/core/general_widgets/auth_field/phone_number_text_field.dart';
 import 'package:clinaj/core/general_widgets/button_widget.dart';
 import 'package:clinaj/core/general_widgets/custom_list_space.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

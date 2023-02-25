@@ -1,4 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
 class PhoneInputTextField extends StatefulWidget {
@@ -6,13 +6,17 @@ class PhoneInputTextField extends StatefulWidget {
   final String label;
   final String hintText;
   final String errorText;
+  final String countryFlagEmoji;
+  final String countryDialCode;
   final void Function(String value) onChanged;
-  final void Function(CountryCode value) onCountryChanged;
+  final void Function(Country value) onCountryChanged;
 
   const PhoneInputTextField(
       {Key? key,
       required this.controller,
       required this.onCountryChanged,
+      required this.countryDialCode,
+      required this.countryFlagEmoji,
       required this.errorText,
       required this.hintText,
       required this.label,
@@ -26,6 +30,8 @@ class PhoneInputTextField extends StatefulWidget {
 class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
    FocusNode myNode = FocusNode();
   bool hasFocus = false;
+  String countryFlagEmoji = "🇳🇬";
+  String countryDialCode = "234";
   @override
   void initState() {
     super.initState();
@@ -82,23 +88,22 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
                           prefixStyle: const TextStyle(color: Colors.transparent),
                           prefixIconConstraints:
                               const BoxConstraints(minWidth: 0, minHeight: 0),
-                          prefixIcon: CountryCodePicker(
-                            textStyle: primaryTextTheme.bodyLarge,
-                            onChanged: widget.onCountryChanged,
-                            padding: const EdgeInsets.only(
-                                left: 0, right: 0, top: 1, bottom: 1),
-                            // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
-                            initialSelection: 'NG',
-                            favorite: const ['+234', 'GH'],
-                            // optional. Shows only country name and flag
-                            showCountryOnly: false,
-                            // optional. Shows only country name and flag when popup is closed.
-                            showOnlyCountryWhenClosed: false,
-                            backgroundColor: Theme.of(context).backgroundColor,
-                            dialogBackgroundColor: Theme.of(context).cardColor,
-                            // optional. aligns the flag and the Text left
-                            alignLeft: false,
-                            showDropDownButton: true,
+                          prefixIcon:  GestureDetector(
+                            onTap: () {
+                              showCountryPicker(
+                                context: context,
+                                showPhoneCode:
+                                    true, // optional. Shows phone code before the country name.
+                                onSelect: widget.onCountryChanged,
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal:8.0),
+                              child: Text(
+                                "${widget.countryFlagEmoji.isEmpty? countryFlagEmoji:widget.countryFlagEmoji }  +${widget.countryDialCode.isEmpty? countryDialCode:widget.countryDialCode} |",
+                                style: primaryTextTheme.displaySmall,
+                              ),
+                            ),
                           ),
                           hintText: widget.hintText,
                           hintStyle: primaryTextTheme.bodyText1!

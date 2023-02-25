@@ -1,3 +1,5 @@
+import 'package:clinaj/app/features/explore/presentation/bindings/explore_binding.dart';
+import 'package:clinaj/app/features/explore/presentation/pages/explore_page.dart';
 import 'package:clinaj/app/features/home/presentation/bindings/home_binding.dart';
 import 'package:clinaj/app/features/home/presentation/pages/home.dart';
 import 'package:clinaj/app/features/onboarding/presentation/bindings/onboard_binding.dart';
@@ -42,5 +44,9 @@ abstract class AppPages {
         page: () => Home(),
         binding: HomeBinding(),
         middlewares: [AuthGuardMiddleware()]),
+    GetPage(
+        name: Routes.explore,
+        page: () =>ExplorePage(),
+        binding: ExploreBinding(),),
   ];
 }
