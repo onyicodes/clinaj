@@ -3,6 +3,9 @@ import 'package:clinaj/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class ExploreRepository {
-  Future<Either<Failure, List<OnboardContentEntity>>> onboardUser();
-  Future<Either<Failure, List<OnboardContentEntity>>> fetchBuyerContents();
+  Future<Either<Failure, List<OnboardContentEntity>>> search();
+  Future<Either<Failure, List<OnboardContentEntity>>> fetchPopular();
+  Future<Either<Failure, List<OnboardContentEntity>>> fetchLive();
+  Future<Either<Failure, List<OnboardContentEntity>>> fetchFeatured();
+  Future<Either<Failure, List<OnboardContentEntity>>> fetchCategories();
 }

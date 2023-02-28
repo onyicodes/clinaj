@@ -4,8 +4,6 @@ import 'package:clinaj/app/features/onboarding/domain/entities/onboarding_conten
 import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_buyer_content_usecase.dart';
 import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_seller_content_usecase.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
-import 'package:clinaj/core/constants/general_constants.dart';
-import 'package:clinaj/core/constants/keys/cache_keys.dart';
 import 'package:clinaj/core/parameters/no_params.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

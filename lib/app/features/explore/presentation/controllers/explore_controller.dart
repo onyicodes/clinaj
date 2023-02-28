@@ -1,10 +1,5 @@
-import 'dart:async';
-
 import 'package:clinaj/app/features/onboarding/domain/entities/onboarding_content_entity.dart';
-import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_buyer_content_usecase.dart';
-import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_seller_content_usecase.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
-import 'package:clinaj/core/parameters/no_params.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

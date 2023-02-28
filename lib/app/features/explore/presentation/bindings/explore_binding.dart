@@ -1,9 +1,8 @@
+import 'package:clinaj/app/features/explore/data/datasources/explore_content_data_provider.dart';
+import 'package:clinaj/app/features/explore/data/repository/explore_repository.dart';
+import 'package:clinaj/app/features/explore/domain/repositories/explore_repository.dart';
+import 'package:clinaj/app/features/explore/domain/usecases/fetch_popular_usecase.dart';
 import 'package:clinaj/app/features/explore/presentation/controllers/explore_controller.dart';
-import 'package:clinaj/app/features/onboarding/data/datasources/onboard_content_local_data_source.dart';
-import 'package:clinaj/app/features/onboarding/data/repository/onboard_content_repository.dart';
-import 'package:clinaj/app/features/onboarding/domain/repositories/onboard_content_repository.dart';
-import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_buyer_content_usecase.dart';
-import 'package:clinaj/app/features/onboarding/domain/usecases/onboard_seller_content_usecase.dart';
 import 'package:get/get.dart';
 
 final onboardingControllerSl = GetInstance();
@@ -14,15 +13,13 @@ void dependencies() {
   Get.lazyPut<ExploreController>(() => ExploreController( storeBox: onboardingControllerSl()));
 
 
-    onboardingControllerSl.lazyPut<OnboardSellerContentUsecase>(
-        () =>OnboardSellerContentUsecase(repository: onboardingControllerSl()));
+    onboardingControllerSl.lazyPut<FetchPopularUsecase>(
+        () =>FetchPopularUsecase(repository: onboardingControllerSl()));
 
-    onboardingControllerSl.lazyPut<OnboardBuyerContentUsecase>(
-        () =>OnboardBuyerContentUsecase(repository: onboardingControllerSl()));
 
-    onboardingControllerSl.lazyPut<OnboardContentRepository>(
-        () => OnboardContentRepositoryImpl(api: onboardingControllerSl()));
+    onboardingControllerSl.lazyPut<ExploreRepository>(
+        () => ExploreRepositoryImpl(api: onboardingControllerSl()));
 
-    onboardingControllerSl.lazyPut<OnboardContentLocalDataSource>(() => OnboardContentLocalDataSourceImpl());
+    onboardingControllerSl.lazyPut<ExploreDataSource>(() => ExploreDataSourceImpl());
   }
 }

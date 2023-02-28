@@ -6,15 +6,18 @@ import 'package:get/get_connect/connect.dart';
 
 const baseUrl = 'https://www.olevelgurusapp.com/v3/index/languages';
 
-abstract class OnboardContentLocalDataSource extends GetConnect {
-  Future<List<OnboardContentModel>> onboardUser();
-  Future<List<OnboardContentModel>> fetchBuyerContents();
+abstract class ExploreDataSource extends GetConnect {
+  Future<List<OnboardContentModel>> search();
+  Future<List<OnboardContentModel>> fetchPopular();
+  Future<List<OnboardContentModel>> fetchFeatured();
+  Future<List<OnboardContentModel>> fetchLive();
+  Future<List<OnboardContentModel>> fetchCategories();
 }
 
-class OnboardContentLocalDataSourceImpl extends OnboardContentLocalDataSource {
+class ExploreDataSourceImpl extends ExploreDataSource {
 // Get request
   @override
-  Future<List<OnboardContentModel>> onboardUser() async {
+  Future<List<OnboardContentModel>> search() async {
     final String response = await rootBundle
         .loadString('assets/json_contents/onboarding/onboard_data.json');
 
@@ -30,7 +33,55 @@ class OnboardContentLocalDataSourceImpl extends OnboardContentLocalDataSource {
   }
 
   @override
-  Future<List<OnboardContentModel>> fetchBuyerContents() async {
+  Future<List<OnboardContentModel>> fetchPopular() async {
+    final String response = await rootBundle
+        .loadString('assets/json_contents/onboarding/buyer_contents.json');
+
+    final List<dynamic> jsonStringContentList;
+    jsonStringContentList = jsonDecode(response);
+    final List<OnboardContentModel> onboardContentModelList =
+        <OnboardContentModel>[];
+
+    for (var onboardContent in jsonStringContentList) {
+      onboardContentModelList.add(OnboardContentModel.fromJson(onboardContent));
+    }
+    return onboardContentModelList;
+  }
+
+  @override
+  Future<List<OnboardContentModel>> fetchFeatured() async {
+    final String response = await rootBundle
+        .loadString('assets/json_contents/onboarding/buyer_contents.json');
+
+    final List<dynamic> jsonStringContentList;
+    jsonStringContentList = jsonDecode(response);
+    final List<OnboardContentModel> onboardContentModelList =
+        <OnboardContentModel>[];
+
+    for (var onboardContent in jsonStringContentList) {
+      onboardContentModelList.add(OnboardContentModel.fromJson(onboardContent));
+    }
+    return onboardContentModelList;
+  }
+
+  @override
+  Future<List<OnboardContentModel>> fetchLive() async {
+    final String response = await rootBundle
+        .loadString('assets/json_contents/onboarding/buyer_contents.json');
+
+    final List<dynamic> jsonStringContentList;
+    jsonStringContentList = jsonDecode(response);
+    final List<OnboardContentModel> onboardContentModelList =
+        <OnboardContentModel>[];
+
+    for (var onboardContent in jsonStringContentList) {
+      onboardContentModelList.add(OnboardContentModel.fromJson(onboardContent));
+    }
+    return onboardContentModelList;
+  }
+
+  @override
+  Future<List<OnboardContentModel>> fetchCategories() async {
     final String response = await rootBundle
         .loadString('assets/json_contents/onboarding/buyer_contents.json');
 
