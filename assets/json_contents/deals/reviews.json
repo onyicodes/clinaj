@@ -12,7 +12,7 @@
           "dealId": 1,
           "createdAt": "2023-01-08T02:43:51.524Z",
           "updatedAt": "2023-01-08T02:43:51.524Z",
-          "customer": {
+          "user": {
             "id": 1,
             "firstName": "ade",
             "lastName": "peter",
@@ -33,7 +33,7 @@
           "dealId": 1,
           "createdAt": "2023-01-08T02:47:44.509Z",
           "updatedAt": "2023-01-08T02:47:44.509Z",
-          "customer": {
+          "user": {
             "id": 1,
             "firstName": "ade",
             "lastName": "peter",
@@ -54,7 +54,7 @@
           "dealId": 1,
           "createdAt": "2023-01-08T02:47:52.978Z",
           "updatedAt": "2023-01-08T02:47:52.978Z",
-          "customer": {
+          "user": {
             "id": 1,
             "firstName": "ade",
             "lastName": "peter",
@@ -72,10 +72,10 @@
           "type": "positive",
           "rating": 4,
           "customerId": 1,
-          "dealId": 1,
+          "vendorID": 1,
           "createdAt": "2023-01-08T02:47:59.785Z",
           "updatedAt": "2023-01-08T02:47:59.785Z",
-          "customer": {
+          "user": {
             "id": 1,
             "firstName": "ade",
             "lastName": "peter",
