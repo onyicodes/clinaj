@@ -1,4 +1,4 @@
-import 'package:clinaj/core/general_widgets/deals/custom_search_field.dart';
+import 'package:clinaj/core/general_widgets/vendor/custom_search_field.dart';
 import 'package:flutter/material.dart';
 
 class SearchDeals extends StatelessWidget {

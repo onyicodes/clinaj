@@ -1,0 +1,65 @@
+{
+    "success": true,
+    "message": "successful",
+    "data": [
+      {
+        "id": 1,
+        "fullName": "Luxury bag",
+        "workDescription": "Simple bag for businesses",
+        "workTitle":"Good sameritan",
+        "yrsExperience": "4",
+        "photo": "assets/images/deals/d1.jpeg",
+        "dob": "25-12-1992",
+        "ratings": 4.5,
+        "totalReviews":20,
+        "chargePerHour":120,
+        "contact": "2 abakaliaka street",
+        "phoneNumber":"080394858495",
+        "gender": "male",
+        "userId": 10,
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      },
+      {
+        "id": 1,
+        "fullName": "Luxury bag",
+        "workDescription": "Simple bag for businesses",
+        "workTitle":"Good sameritan",
+        "yrsExperience": "4",
+        "photo": "assets/images/deals/d1.jpeg",
+        "dob": "25-12-1992",
+        "ratings": 4.5,
+        "totalReviews":20,
+        "chargePerHour":120,
+        "contact": "2 abakaliaka street",
+        "phoneNumber":"080394858495",
+        "gender": "male",
+        "userId": 10,
+        "createdAt": "2023-01-02T21:47:46.123Z",
+        "updatedAt": "2023-01-02T21:47:46.123Z",
+          "location": {
+            "id": 10,
+            "latitude": 6.497872884358112,
+            "longitude": 3.145509739522844,
+            "address": "2 ole street",
+            "createdAt": "2022-12-31T00:39:53.814Z",
+            "updatedAt": "2022-12-31T00:39:53.814Z"
+          },
+          "category": {
+            "name": "phones"
+          }
+      }
+     
+    ]
+  }

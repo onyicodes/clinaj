@@ -1,9 +1,10 @@
-import 'package:clinaj/core/general_widgets/deals/rating_widget.dart';
+import 'package:clinaj/core/general_widgets/vendor/vendor_cover.dart';
+import 'package:clinaj/core/general_widgets/vendor/rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class ReviewsCardLoading extends StatelessWidget {
-  const ReviewsCardLoading({
+class DealShimmerCard extends StatelessWidget {
+  const DealShimmerCard({
     Key? key,
   }) : super(key: key);
 
@@ -17,33 +18,30 @@ class ReviewsCardLoading extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              leading: const CircleAvatar(radius: 20),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 10,
-                    width: 80,
-                    color: Colors.grey.shade100,
-                  ),
-                  Container(
-                    height: 10,
-                    width: 80,
-                    color: Colors.grey.shade100,
-                  ),
-                ],
-              ),
-              subtitle: const RatingBuilder(
-                ratingValue: 5.0,
-              ),
+            const VendorImageCover(
+              detailsView: false,
+              imageUrl: 'assets/images/deals/d1.jpeg',
+            ),
+            const SizedBox(
+              height: 2,
+            ),
+            Container(
+              height: 12,
+              width: 150,
+              color: Colors.grey.shade100,
+            ),
+            const SizedBox(
+              height: 2,
+            ),
+            const RatingBuilder(
+              ratingValue: 5,
             ),
             const SizedBox(
               height: 2,
             ),
             Container(
               height: 10,
-              width: 300,
+              width: 80,
               color: Colors.grey.shade100,
             ),
             const SizedBox(
@@ -51,7 +49,7 @@ class ReviewsCardLoading extends StatelessWidget {
             ),
             Container(
               height: 10,
-              width: 250,
+              width: 150,
               color: Colors.grey.shade100,
             ),
             const SizedBox(
@@ -59,7 +57,7 @@ class ReviewsCardLoading extends StatelessWidget {
             ),
             Container(
               height: 10,
-              width: 100,
+              width: 40,
               color: Colors.grey.shade100,
             ),
           ],

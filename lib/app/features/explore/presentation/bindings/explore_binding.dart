@@ -5,21 +5,21 @@ import 'package:clinaj/app/features/explore/domain/usecases/fetch_popular_usecas
 import 'package:clinaj/app/features/explore/presentation/controllers/explore_controller.dart';
 import 'package:get/get.dart';
 
-final onboardingControllerSl = GetInstance();
+final exploreControllerSl = GetInstance();
 
 class ExploreBinding implements Bindings {
 @override
 void dependencies() {
-  Get.lazyPut<ExploreController>(() => ExploreController( storeBox: onboardingControllerSl()));
+  Get.lazyPut<ExploreController>(() => ExploreController( storeBox: exploreControllerSl(), fetchPopularUsecase: exploreControllerSl()));
 
 
-    onboardingControllerSl.lazyPut<FetchPopularUsecase>(
-        () =>FetchPopularUsecase(repository: onboardingControllerSl()));
+    exploreControllerSl.lazyPut<FetchPopularUsecase>(
+        () =>FetchPopularUsecase(repository: exploreControllerSl()));
 
 
-    onboardingControllerSl.lazyPut<ExploreRepository>(
-        () => ExploreRepositoryImpl(api: onboardingControllerSl()));
+    exploreControllerSl.lazyPut<ExploreRepository>(
+        () => ExploreRepositoryImpl(api: exploreControllerSl()));
 
-    onboardingControllerSl.lazyPut<ExploreDataSource>(() => ExploreDataSourceImpl());
+    exploreControllerSl.lazyPut<ExploreDataSource>(() => ExploreDataSourceImpl());
   }
 }

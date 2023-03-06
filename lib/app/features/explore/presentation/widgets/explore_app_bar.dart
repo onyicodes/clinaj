@@ -1,5 +1,5 @@
-import 'package:clinaj/app/features/onboarding/domain/entities/onboarding_content_entity.dart';
-import 'package:clinaj/core/general_widgets/deals/custom_search_field.dart';
+
+import 'package:clinaj/core/general_widgets/vendor/custom_search_field.dart';
 import 'package:flutter/material.dart';
 
 class ExploreAppBar extends StatelessWidget {
@@ -39,7 +39,7 @@ class ExploreAppBar extends StatelessWidget {
               top: 120,
               left: 24,
               child: Text('Find your doctor',style: primaryTextTheme.displayMedium!.copyWith(color: Colors.white),)),
-            Positioned(
+           const  Positioned(
               top: 70,
               right:24,
               child: CircleAvatar(radius: 30,)),

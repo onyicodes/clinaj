@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:clinaj/app/features/signin/presentation/controllers/signin_controller.dart';
 import 'package:clinaj/app/features/signin/presentation/widgets/pin_themes.dart';
 import 'package:clinaj/app/features/signin/presentation/widgets/reset_password_bottomsheet.dart';
+import 'package:clinaj/core/constants/general_constants.dart';
 import 'package:clinaj/core/general_widgets/buttom_sheet_borderline.dart';
 import 'package:clinaj/core/general_widgets/button_widget.dart';
 import 'package:clinaj/core/general_widgets/custom_list_space.dart';
@@ -33,18 +34,24 @@ class VerifyPinBottomSheet extends StatelessWidget {
             ),
             const Align(
                 alignment: Alignment.topCenter, child: BottomSheetBorderLine()),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             Text(
               'Enter 4 Digits Code',
               style: primaryTextTheme.headline2,
             ),
-            const CustomListSpacing(isMajorSpacing: false),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV24.value),
             Text(
               """Enter the 4 digits code that you received on
 your email.""",
               style: primaryTextTheme.bodyText1,
             ),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             GetBuilder<SigninController>(
               builder: (_) {
                 return Pinput(
@@ -65,7 +72,9 @@ your email.""",
                 );
               },
             ),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             Center(
               child: GetBuilder<SigninController>(
                 builder: (_) {
@@ -84,7 +93,9 @@ your email.""",
                 },
               ),
             ),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
           ],
         ),
       ),

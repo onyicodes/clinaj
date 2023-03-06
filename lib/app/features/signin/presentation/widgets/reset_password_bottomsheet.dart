@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:clinaj/app/features/signin/presentation/controllers/signin_controller.dart';
+import 'package:clinaj/core/constants/general_constants.dart';
 import 'package:clinaj/core/general_widgets/auth_field/password_textfield.dart';
 import 'package:clinaj/core/general_widgets/buttom_sheet_borderline.dart';
 import 'package:clinaj/core/general_widgets/button_widget.dart';
@@ -30,11 +31,17 @@ class ResetPassword extends StatelessWidget {
             const Align(
               alignment: Alignment.topCenter,
               child:  BottomSheetBorderLine()),
-           const CustomListSpacing(isMajorSpacing: true),
+           CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             Text('Reset password', style: primaryTextTheme.headline2,),
-           const CustomListSpacing(isMajorSpacing: false),
+           CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV24.value),
             Text("""Set the new password for your account so you can login and access all the features.""", style: primaryTextTheme.bodyText1,),
-const CustomListSpacing(isMajorSpacing: true),
+CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             GetX<SigninController>(
               builder: (_) {
                 return PasswordTextField(
@@ -52,7 +59,9 @@ const CustomListSpacing(isMajorSpacing: true),
               },
             ),
 
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             GetX<SigninController>(
               builder: (_) {
                 return PasswordTextField(
@@ -69,7 +78,9 @@ const CustomListSpacing(isMajorSpacing: true),
                   hintText: 'Re-enter password');
               },
             ),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
             Center(
               child: GetBuilder<SigninController>(
                 builder: (_) {
@@ -86,7 +97,9 @@ const CustomListSpacing(isMajorSpacing: true),
                 },
               ),
             ),
-            const CustomListSpacing(isMajorSpacing: true),
+            CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
           ],
         ),
       ),

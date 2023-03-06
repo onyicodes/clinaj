@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:clinaj/app/features/onboarding/data/model/onboard_seller_content_model.dart';
+import 'package:clinaj/core/entities/vendors_entity.dart';
+import 'package:clinaj/core/models/vendors_model.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_connect/connect.dart';
 
@@ -8,7 +10,7 @@ const baseUrl = 'https://www.olevelgurusapp.com/v3/index/languages';
 
 abstract class ExploreDataSource extends GetConnect {
   Future<List<OnboardContentModel>> search();
-  Future<List<OnboardContentModel>> fetchPopular();
+  Future<List<VendorsEntity>> fetchPopular();
   Future<List<OnboardContentModel>> fetchFeatured();
   Future<List<OnboardContentModel>> fetchLive();
   Future<List<OnboardContentModel>> fetchCategories();
@@ -33,19 +35,19 @@ class ExploreDataSourceImpl extends ExploreDataSource {
   }
 
   @override
-  Future<List<OnboardContentModel>> fetchPopular() async {
+  Future<List<VendorsEntity>> fetchPopular() async {
     final String response = await rootBundle
-        .loadString('assets/json_contents/onboarding/buyer_contents.json');
+        .loadString('assets/json_contents/vendors/vendors.json');
 
-    final List<dynamic> jsonStringContentList;
+    final Map<String, dynamic> jsonStringContentList;
     jsonStringContentList = jsonDecode(response);
-    final List<OnboardContentModel> onboardContentModelList =
-        <OnboardContentModel>[];
+    final List<VendorsEntity> vendorsModelList =
+        <VendorsEntity>[];
 
-    for (var onboardContent in jsonStringContentList) {
-      onboardContentModelList.add(OnboardContentModel.fromJson(onboardContent));
+    for (var vendor in jsonStringContentList["data"]) {
+      vendorsModelList.add(VendorsModel.fromMap(vendor));
     }
-    return onboardContentModelList;
+    return vendorsModelList;
   }
 
   @override

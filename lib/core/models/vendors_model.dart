@@ -64,12 +64,12 @@ class VendorsModel extends VendorsEntity {
 
   factory VendorsModel.fromMap(Map<String, dynamic> json) => VendorsModel(
         id: json["id"],
-        fullName: json["firstName"],
-        yrsExperience: json["description"],
+        fullName: json["fullName"],
+        yrsExperience: json["yrsExperience"],
         photo: json["photo"],
         dob: json["dob"],
-        workDescription: json["businessName"],
-        workTitle: json["businessType"],
+        workDescription: json["workDescription"],
+        workTitle: json["workTitle"],
         contact: json["contact"],
         gender: json["gender"],
         createdAt: DateTime.parse(json["createdAt"]),
@@ -78,8 +78,8 @@ class VendorsModel extends VendorsEntity {
         phoneNumber: json["phoneNumber"],
         ratings: json["ratings"],
         chargePerHour: json["chargePerHour"],
-        location: json["location"],
-        category: json["category"],
+        location:LocationModel.fromJson( json["location"]),
+        category: CategoryModel.fromMap(json["category"]),
         totalReviews: json["totalReviews"]
       );
 
@@ -89,8 +89,8 @@ class VendorsModel extends VendorsEntity {
         "description": yrsExperience,
         "photo": photo,
         "dob": dob,
-        "businessName": workDescription,
-        "businessType": workTitle,
+        "workDescription": workDescription,
+        "workTitle": workTitle,
         "contact": contact,
         "gender": gender,
         "createdAt": createdAt,

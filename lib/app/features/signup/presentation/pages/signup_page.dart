@@ -3,6 +3,7 @@ import 'package:clinaj/app/features/signup/presentation/widgets/password_check.d
 import 'package:clinaj/app/features/signup/presentation/widgets/social_signups.dart';
 import 'package:clinaj/app/routes/app_pages.dart';
 import 'package:clinaj/core/constants/assets_constants.dart';
+import 'package:clinaj/core/constants/general_constants.dart';
 import 'package:clinaj/core/constants/request_status.dart';
 import 'package:clinaj/core/general_widgets/auth_field/auth_field_divider.dart';
 import 'package:clinaj/core/general_widgets/auth_field/custom_auth_field.dart';
@@ -36,19 +37,25 @@ class SignupPage extends GetView<SignupController> {
               const SizedBox(
                 height: 100,
               ),
-              const CustomListSpacing(isMajorSpacing: true),
+              CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV32.value),
               Text(
                 'Join us to start searching',
                 textAlign: TextAlign.center,
                 style: primaryTextTheme.headline2,
               ),
-              const CustomListSpacing(isMajorSpacing: false),
+              CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV24.value),
               Text(
                 'You can search c ourse, apply course and find scholarship for abroad studies',
                 textAlign: TextAlign.center,
                 style: primaryTextTheme.bodyText1,
               ),
-              const CustomListSpacing(isMajorSpacing: true),
+              CustomListSpacing(
+              isVertical: true,
+              spacingValue: ListSpacingValue.spacingV24.value),
               const SocialSignups(),
               CustomAuthField(
                   controller: _.emailAddressController,

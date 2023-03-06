@@ -83,6 +83,7 @@ flutter:
     - assets/svg/bg/
     - assets/svg/icons/
     - assets/json_contents/onboarding/
+    - assets/json_contents/vendors/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

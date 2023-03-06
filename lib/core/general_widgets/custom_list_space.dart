@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomListSpacing extends StatelessWidget {
-  final bool isMajorSpacing;
-  const CustomListSpacing({Key? key, required this.isMajorSpacing}) : super(key: key);
+  final bool isVertical;
+  final double spacingValue;
+  const CustomListSpacing({Key? key, required this.isVertical, required this.spacingValue})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-      height: isMajorSpacing?24: 12,
+    return SizedBox(
+      height: isVertical? spacingValue: 0,
+      width: isVertical?0:spacingValue,
     );
   }
 }
