@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class OnboardingDisplayWidget extends StatelessWidget {
   final OnboardContentEntity content;
   final bool rightSided;
-  const OnboardingDisplayWidget({Key? key, required this.content, required this.rightSided})
+  const OnboardingDisplayWidget(
+      {Key? key, required this.content, required this.rightSided})
       : super(key: key);
 
   @override
@@ -25,8 +26,8 @@ class OnboardingDisplayWidget extends StatelessWidget {
                 ),
                 Positioned(
                   top: -40,
-                  left:rightSided?null: -100,
-                  right: rightSided?-100:null,
+                  left: rightSided ? null : -100,
+                  right: rightSided ? -100 : null,
                   child: Container(
                     height: 340,
                     width: 340,
@@ -47,14 +48,14 @@ class OnboardingDisplayWidget extends StatelessWidget {
             Text(
               content.title,
               textAlign: TextAlign.center,
-              style: primaryTextTheme.headline1,
+              style: primaryTextTheme.displayLarge,
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 content.subtitle,
                 textAlign: TextAlign.center,
-                style: primaryTextTheme.bodyText1,
+                style: primaryTextTheme.bodyLarge,
               ),
             ),
           ],

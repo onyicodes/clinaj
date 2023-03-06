@@ -35,23 +35,23 @@ class VerifyPinBottomSheet extends StatelessWidget {
             const Align(
                 alignment: Alignment.topCenter, child: BottomSheetBorderLine()),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             Text(
               'Enter 4 Digits Code',
-              style: primaryTextTheme.headline2,
+              style: primaryTextTheme.displayMedium,
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV24.value),
             Text(
               """Enter the 4 digits code that you received on
 your email.""",
-              style: primaryTextTheme.bodyText1,
+              style: primaryTextTheme.bodyLarge,
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             GetBuilder<SigninController>(
               builder: (_) {
                 return Pinput(
@@ -73,8 +73,8 @@ your email.""",
               },
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             Center(
               child: GetBuilder<SigninController>(
                 builder: (_) {
@@ -82,7 +82,7 @@ your email.""",
                       label: 'Continue',
                       onPressed: () {
                         _.goToPResetPassword(
-                            resetPwBottomsheet:const ResetPassword());
+                            resetPwBottomsheet: const ResetPassword());
                       },
                       radius: 12,
                       width: 345,
@@ -94,8 +94,8 @@ your email.""",
               ),
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
           ],
         ),
       ),

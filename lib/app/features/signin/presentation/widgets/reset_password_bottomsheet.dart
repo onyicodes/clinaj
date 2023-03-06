@@ -27,79 +27,84 @@ class ResetPassword extends StatelessWidget {
         ),
         child: ListView(
           children: [
-           const SizedBox(height: 4,),
+            const SizedBox(
+              height: 4,
+            ),
             const Align(
-              alignment: Alignment.topCenter,
-              child:  BottomSheetBorderLine()),
-           CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
-            Text('Reset password', style: primaryTextTheme.headline2,),
-           CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
-            Text("""Set the new password for your account so you can login and access all the features.""", style: primaryTextTheme.bodyText1,),
-CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                alignment: Alignment.topCenter, child: BottomSheetBorderLine()),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
+            Text(
+              'Reset password',
+              style: primaryTextTheme.displayMedium,
+            ),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV24.value),
+            Text(
+              """Set the new password for your account so you can login and access all the features.""",
+              style: primaryTextTheme.bodyLarge,
+            ),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             GetX<SigninController>(
               builder: (_) {
                 return PasswordTextField(
-                  controller: _.passwordController,
-                  errorText: _.passwordError,
-                  obscurePassword: _.obscurePasswordText,
-                  label: 'Password',
-                  onChanged: (String value) {
-                    _.checkPasswordError();
-                  },
-                  toggleObscureText: () {
-                    _.obscurePasswordText = !_.obscurePasswordText;
-                  },
-                  hintText: 'New password');
+                    controller: _.passwordController,
+                    errorText: _.passwordError,
+                    obscurePassword: _.obscurePasswordText,
+                    label: 'Password',
+                    onChanged: (String value) {
+                      _.checkPasswordError();
+                    },
+                    toggleObscureText: () {
+                      _.obscurePasswordText = !_.obscurePasswordText;
+                    },
+                    hintText: 'New password');
               },
             ),
-
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             GetX<SigninController>(
               builder: (_) {
                 return PasswordTextField(
-                  controller: _.passwordController,
-                  errorText: _.passwordError,
-                  obscurePassword: _.obscurePasswordText,
-                  label: 'Password',
-                  onChanged: (String value) {
-                    _.checkPasswordError();
-                  },
-                  toggleObscureText: () {
-                    _.obscurePasswordText = !_.obscurePasswordText;
-                  },
-                  hintText: 'Re-enter password');
+                    controller: _.passwordController,
+                    errorText: _.passwordError,
+                    obscurePassword: _.obscurePasswordText,
+                    label: 'Password',
+                    onChanged: (String value) {
+                      _.checkPasswordError();
+                    },
+                    toggleObscureText: () {
+                      _.obscurePasswordText = !_.obscurePasswordText;
+                    },
+                    hintText: 'Re-enter password');
               },
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             Center(
               child: GetBuilder<SigninController>(
                 builder: (_) {
                   return CustomButton(
                       label: 'Continue',
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       radius: 12,
                       width: 345,
                       borderColor: Theme.of(context).primaryColor,
                       backgroundColor: Theme.of(context).primaryColor,
-                      textColor:const Color(0xffffffff),
+                      textColor: const Color(0xffffffff),
                       primaryTextTheme: primaryTextTheme);
                 },
               ),
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
           ],
         ),
       ),

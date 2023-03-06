@@ -37,7 +37,7 @@ class CustomDialogBox extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'Are you sure you want to delete your account?',
-                  style: primaryTextTheme.bodyText1,
+                  style: primaryTextTheme.bodyLarge,
                 ),
               ),
               const SizedBox(
@@ -57,7 +57,7 @@ class CustomDialogBox extends StatelessWidget {
                   onPressed: onTapCancel,
                   borderColor: Theme.of(context).errorColor,
                   backgroundColor: Theme.of(context).cardColor,
-                  textColor: primaryTextTheme.headline1!.color!,
+                  textColor: primaryTextTheme.displayLarge!.color!,
                   primaryTextTheme: primaryTextTheme),
               const SizedBox(height: 12),
             ],

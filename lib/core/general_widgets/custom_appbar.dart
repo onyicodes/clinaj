@@ -13,7 +13,7 @@ AppBar customAppBar(
   return AppBar(
     title: Text(
       title,
-      style: primaryTextTheme.headline2,
+      style: primaryTextTheme.displayMedium,
     ),
     centerTitle: centerTitle,
     actions: actions,

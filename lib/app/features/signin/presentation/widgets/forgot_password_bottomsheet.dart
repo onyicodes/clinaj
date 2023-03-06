@@ -34,23 +34,23 @@ class ForgotPassword extends StatelessWidget {
             const Align(
                 alignment: Alignment.topCenter, child: BottomSheetBorderLine()),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             Text(
               'Forgot password',
-              style: primaryTextTheme.headline2,
+              style: primaryTextTheme.displayMedium,
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV24.value),
             Text(
               """Enter your email for the verification proccesss,
 we will send 4 digits code to your email.""",
-              style: primaryTextTheme.bodyText1,
+              style: primaryTextTheme.bodyLarge,
             ),
-           CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             GetX<SigninController>(
               builder: (_) {
                 return CustomAuthField(
@@ -67,8 +67,8 @@ we will send 4 digits code to your email.""",
               },
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
             Center(
               child: GetBuilder<SigninController>(
                 builder: (_) {
@@ -88,8 +88,8 @@ we will send 4 digits code to your email.""",
               ),
             ),
             CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV32.value),
           ],
         ),
       ),

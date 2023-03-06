@@ -9,7 +9,13 @@ class UploadImageDialog extends StatelessWidget {
   final void Function() onTapChooseFromLib;
   final void Function() onTapDelete;
   final void Function() onTapCancel;
-  const UploadImageDialog({Key? key, required this.onTapCancel, required this.onTapDelete, required this.onTapChooseFromLib, required this.onTapTakePhoto,}) : super(key: key);
+  const UploadImageDialog({
+    Key? key,
+    required this.onTapCancel,
+    required this.onTapDelete,
+    required this.onTapChooseFromLib,
+    required this.onTapTakePhoto,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,30 +41,29 @@ class UploadImageDialog extends StatelessWidget {
                 label: 'Take a photo',
                 onPressed: onTapTakePhoto,
                 borderColor: Theme.of(context).primaryColor,
-               backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).primaryColor,
                 primaryTextTheme: primaryTextTheme),
-
             CustomButton(
                 label: 'Choose from library',
                 onPressed: onTapChooseFromLib,
                 borderColor: Theme.of(context).primaryColor,
-               backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).primaryColor,
                 primaryTextTheme: primaryTextTheme),
             CustomButton(
                 label: 'Delete photo',
                 onPressed: onTapDelete,
                 borderColor: Theme.of(context).primaryColor,
                 backgroundColor: Theme.of(context).cardColor,
-                textColor: primaryTextTheme.headline1!.color!,
+                textColor: primaryTextTheme.displayLarge!.color!,
                 primaryTextTheme: primaryTextTheme),
             const SizedBox(height: 8),
             CustomButton(
-                    label: 'Cancel',
-                    onPressed:onTapCancel,
-                    borderColor: Theme.of(context).primaryColor,
-                    backgroundColor: Theme.of(context).cardColor,
-                    textColor: primaryTextTheme.headline1!.color!,
-                    primaryTextTheme: primaryTextTheme),
+                label: 'Cancel',
+                onPressed: onTapCancel,
+                borderColor: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).cardColor,
+                textColor: primaryTextTheme.displayLarge!.color!,
+                primaryTextTheme: primaryTextTheme),
             const SizedBox(height: 12),
           ],
         ),

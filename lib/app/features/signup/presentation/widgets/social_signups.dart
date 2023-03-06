@@ -26,15 +26,26 @@ class SocialSignups extends StatelessWidget {
                     height: 55,
                     width: 160,
                     decoration: BoxDecoration(
-                       color: Colors.white,
-                      boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 4, spreadRadius:2)],
-                      borderRadius: BorderRadius.circular(12)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Theme.of(context).shadowColor,
+                              blurRadius: 4,
+                              spreadRadius: 2)
+                        ],
+                        borderRadius: BorderRadius.circular(12)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Image(image: AssetImage(AssetsConstants.googleIcon)),
-                        const SizedBox(width:8 ,),
-                        Text('Facebook', style: primaryTextTheme.bodyText1,)
+                        const Image(
+                            image: AssetImage(AssetsConstants.googleIcon)),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          'Facebook',
+                          style: primaryTextTheme.bodyLarge,
+                        )
                       ],
                     )),
               ),
@@ -51,15 +62,25 @@ class SocialSignups extends StatelessWidget {
                     height: 55,
                     width: 160,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [BoxShadow(color: Theme.of(context).shadowColor, blurRadius: 4, spreadRadius:2)],
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Theme.of(context).shadowColor,
+                              blurRadius: 4,
+                              spreadRadius: 2)
+                        ],
                         borderRadius: BorderRadius.circular(12)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                      const   Image(image: AssetImage(AssetsConstants.fbIcon)),
-                        const SizedBox(width:8 ,),
-                        Text('Google', style: primaryTextTheme.bodyText1,)
+                        const Image(image: AssetImage(AssetsConstants.fbIcon)),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          'Google',
+                          style: primaryTextTheme.bodyLarge,
+                        )
                       ],
                     )),
               ),

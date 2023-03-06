@@ -13,7 +13,7 @@ class ExplorePage extends GetView<ExploreController> {
   @override
   Widget build(BuildContext context) {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
-    return  Container(
+    return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
@@ -23,74 +23,68 @@ class ExplorePage extends GetView<ExploreController> {
         ),
       ),
       child: SingleChildScrollView(
-        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Align(
-              alignment: Alignment.center,
-              child: ExploreAppBar()),
-              CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
-              Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Categories',
-                        style: primaryTextTheme.headline3,
-                      ),
-                    ),
-                     CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
-             GetX<ExploreController>(builder: (_) {
+            const Align(alignment: Alignment.center, child: ExploreAppBar()),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV24.value),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Categories',
+                style: primaryTextTheme.displaySmall,
+              ),
+            ),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV24.value),
+            GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 300,
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
                     itemCount: _.popularVendorsEntityList.length,
                     itemBuilder: ((context, index) {
                       return PopularVendorCard(
                           vendorsEntity: _.popularVendorsEntityList[index]);
                     })),
               );
-              }),
-              CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV54.value),
-        
-              GetX<ExploreController>(builder: (_) {
+            }),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV54.value),
+            GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 300,
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
                     itemCount: _.popularVendorsEntityList.length,
                     itemBuilder: ((context, index) {
                       return PopularVendorCard(
                           vendorsEntity: _.popularVendorsEntityList[index]);
                     })),
               );
-              }),
-              CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV54.value),
-        
-              GetX<ExploreController>(builder: (_) {
+            }),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV54.value),
+            GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 320,
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
                     itemCount: _.popularVendorsEntityList.length,
                     itemBuilder: ((context, index) {
                       return PopularVendorCard(
                           vendorsEntity: _.popularVendorsEntityList[index]);
                     })),
               );
-              })
-            
+            })
           ],
         ),
       ),

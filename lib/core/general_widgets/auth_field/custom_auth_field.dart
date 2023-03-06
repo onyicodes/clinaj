@@ -52,7 +52,7 @@ class _CustomAuthFieldState extends State<CustomAuthField> {
         myNode.requestFocus();
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
         child: TextField(
           controller: widget.controller,
           focusNode: myNode,
@@ -60,24 +60,21 @@ class _CustomAuthFieldState extends State<CustomAuthField> {
           autocorrect: false,
           onChanged: widget.onChanged,
           obscureText: widget.isPasswordField ? true : false,
-          style: primaryTextTheme.bodyText1,
+          style: primaryTextTheme.bodyLarge,
           decoration: InputDecoration(
               prefixIconConstraints:
                   const BoxConstraints(minWidth: 295, minHeight: 0),
-              errorText: widget.errorText.isEmpty
-                  ? null
-                  : widget.errorText,
+              errorText: widget.errorText.isEmpty ? null : widget.errorText,
               hintText: widget.hintText,
-              hintStyle: primaryTextTheme.bodyText1!
+              hintStyle: primaryTextTheme.bodyLarge!
                   .copyWith(color: const Color(0xffbebfbf)),
               focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green),
-                    borderRadius: BorderRadius.all(Radius.circular(12))),
-                contentPadding: const EdgeInsets.all( 16.0),
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color:Theme.of(context).dividerColor ),
-                    borderRadius:const BorderRadius.all(Radius.circular(12))
-                    )),
+                  borderSide: BorderSide(color: Colors.green),
+                  borderRadius: BorderRadius.all(Radius.circular(12))),
+              contentPadding: const EdgeInsets.all(16.0),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor),
+                  borderRadius: const BorderRadius.all(Radius.circular(12)))),
         ),
       ),
     );

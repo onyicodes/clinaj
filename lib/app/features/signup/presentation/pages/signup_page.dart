@@ -38,24 +38,24 @@ class SignupPage extends GetView<SignupController> {
                 height: 100,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV32.value),
               Text(
                 'Join us to start searching',
                 textAlign: TextAlign.center,
-                style: primaryTextTheme.headline2,
+                style: primaryTextTheme.displayMedium,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV24.value),
               Text(
                 'You can search c ourse, apply course and find scholarship for abroad studies',
                 textAlign: TextAlign.center,
-                style: primaryTextTheme.bodyText1,
+                style: primaryTextTheme.bodyLarge,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV24.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV24.value),
               const SocialSignups(),
               CustomAuthField(
                   controller: _.emailAddressController,
@@ -107,13 +107,15 @@ class SignupPage extends GetView<SignupController> {
                   borderColor: Theme.of(context).primaryColor,
                 ),
               ),
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Already have an account?',
-                    style: primaryTextTheme.headline4!
+                    style: primaryTextTheme.headlineMedium!
                         .copyWith(fontWeight: FontWeight.normal),
                   ),
                   TextButton(
@@ -122,7 +124,7 @@ class SignupPage extends GetView<SignupController> {
                       },
                       child: Text(
                         'Sign in',
-                        style: primaryTextTheme.headline4!
+                        style: primaryTextTheme.headlineMedium!
                             .copyWith(color: Theme.of(context).primaryColor),
                       ))
                 ],

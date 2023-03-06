@@ -38,24 +38,24 @@ class SigninPage extends GetView<SignupController> {
                 height: 100,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV32.value),
               Text(
                 'Welcome back',
                 textAlign: TextAlign.center,
-                style: primaryTextTheme.headline2,
+                style: primaryTextTheme.displayMedium,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV32.value),
               Text(
                 'You can search course, apply course and find scholarship for abroad studies',
                 textAlign: TextAlign.center,
-                style: primaryTextTheme.bodyText1,
+                style: primaryTextTheme.bodyLarge,
               ),
               CustomListSpacing(
-              isVertical: true,
-              spacingValue: ListSpacingValue.spacingV32.value),
+                  isVertical: true,
+                  spacingValue: ListSpacingValue.spacingV32.value),
               const SocialSignups(),
               CustomAuthField(
                   controller: _.emailAddressController,
@@ -87,11 +87,11 @@ class SigninPage extends GetView<SignupController> {
                   children: [
                     TextButton(
                         onPressed: () {
-                          _.forgotPassword(bottomsheet:const ForgotPassword());
+                          _.forgotPassword(bottomsheet: const ForgotPassword());
                         },
                         child: Text(
                           'Forgot password',
-                          style: primaryTextTheme.headline4!
+                          style: primaryTextTheme.headlineMedium!
                               .copyWith(color: Theme.of(context).primaryColor),
                         )),
                     const SizedBox()
@@ -125,7 +125,7 @@ class SigninPage extends GetView<SignupController> {
                 children: [
                   Text(
                     "Don't have an account?",
-                    style: primaryTextTheme.headline4!
+                    style: primaryTextTheme.headlineMedium!
                         .copyWith(fontWeight: FontWeight.normal),
                   ),
                   TextButton(
@@ -134,7 +134,7 @@ class SigninPage extends GetView<SignupController> {
                       },
                       child: Text(
                         'Join us',
-                        style: primaryTextTheme.headline4!
+                        style: primaryTextTheme.headlineMedium!
                             .copyWith(color: Theme.of(context).primaryColor),
                       ))
                 ],

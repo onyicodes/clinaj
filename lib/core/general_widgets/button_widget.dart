@@ -35,11 +35,10 @@ class CustomButton extends StatelessWidget {
           minimumSize: MaterialStateProperty.all(Size(width, height)),
           shape:
               MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(radius),
-            ),
-            side: BorderSide(color: borderColor)
-          )),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(radius),
+                  ),
+                  side: BorderSide(color: borderColor))),
           shadowColor: MaterialStateProperty.all(
             const Color(0xff4d4d4d).withOpacity(0.2),
           ),
@@ -50,7 +49,7 @@ class CustomButton extends StatelessWidget {
               color: Colors.white,
             )
           : Text(label,
-              style: primaryTextTheme.headline3!.copyWith(color: textColor)),
+              style: primaryTextTheme.displaySmall!.copyWith(color: textColor)),
     );
   }
 }

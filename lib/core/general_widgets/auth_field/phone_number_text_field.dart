@@ -28,7 +28,7 @@ class PhoneInputTextField extends StatefulWidget {
 }
 
 class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
-   FocusNode myNode = FocusNode();
+  FocusNode myNode = FocusNode();
   bool hasFocus = false;
   String countryFlagEmoji = "🇳🇬";
   String countryDialCode = "234";
@@ -42,12 +42,13 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
     });
   }
 
-   @override
+  @override
   void dispose() {
     super.dispose();
-    myNode.removeListener((){});
+    myNode.removeListener(() {});
     myNode.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     TextTheme primaryTextTheme = Theme.of(context).primaryTextTheme;
@@ -62,18 +63,21 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
           children: [
             Container(
               padding: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color:widget.errorText.isNotEmpty?Colors.red: hasFocus
-                                ? Colors.green
-                                : Theme.of(context).dividerColor),
-                        borderRadius: BorderRadius.circular(20)),
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      color: widget.errorText.isNotEmpty
+                          ? Colors.red
+                          : hasFocus
+                              ? Colors.green
+                              : Theme.of(context).dividerColor),
+                  borderRadius: BorderRadius.circular(20)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 6.0),
-                    child: Text(widget.label, style: primaryTextTheme.headline3),
+                    child: Text(widget.label,
+                        style: primaryTextTheme.displaySmall),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -82,13 +86,14 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
                       onChanged: widget.onChanged,
                       keyboardType: TextInputType.phone,
                       focusNode: myNode,
-                      style: primaryTextTheme.bodyText1,
+                      style: primaryTextTheme.bodyLarge,
                       autocorrect: false,
                       decoration: InputDecoration(
-                          prefixStyle: const TextStyle(color: Colors.transparent),
+                          prefixStyle:
+                              const TextStyle(color: Colors.transparent),
                           prefixIconConstraints:
                               const BoxConstraints(minWidth: 0, minHeight: 0),
-                          prefixIcon:  GestureDetector(
+                          prefixIcon: GestureDetector(
                             onTap: () {
                               showCountryPicker(
                                 context: context,
@@ -98,15 +103,16 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
                               );
                             },
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal:8.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Text(
-                                "${widget.countryFlagEmoji.isEmpty? countryFlagEmoji:widget.countryFlagEmoji }  +${widget.countryDialCode.isEmpty? countryDialCode:widget.countryDialCode} |",
+                                "${widget.countryFlagEmoji.isEmpty ? countryFlagEmoji : widget.countryFlagEmoji}  +${widget.countryDialCode.isEmpty ? countryDialCode : widget.countryDialCode} |",
                                 style: primaryTextTheme.displaySmall,
                               ),
                             ),
                           ),
                           hintText: widget.hintText,
-                          hintStyle: primaryTextTheme.bodyText1!
+                          hintStyle: primaryTextTheme.bodyLarge!
                               .copyWith(color: const Color(0xffbebfbf)),
                           focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide.none,
@@ -124,7 +130,7 @@ class _PhoneInputTextFieldState extends State<PhoneInputTextField> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.errorText,
-                style: primaryTextTheme.bodyText2!
+                style: primaryTextTheme.bodyMedium!
                     .copyWith(color: Theme.of(context).errorColor),
               ),
             )
