@@ -33,13 +33,13 @@ class ExplorePage extends GetView<ExploreController> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Categories',
+                'Live Vendors',
                 style: primaryTextTheme.displaySmall,
               ),
             ),
             CustomListSpacing(
                 isVertical: true,
-                spacingValue: ListSpacingValue.spacingV24.value),
+                spacingValue: ListSpacingValue.spacingV16.value),
             GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 300,
@@ -56,6 +56,16 @@ class ExplorePage extends GetView<ExploreController> {
             CustomListSpacing(
                 isVertical: true,
                 spacingValue: ListSpacingValue.spacingV54.value),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Popular Vendors',
+                style: primaryTextTheme.displaySmall,
+              ),
+            ),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV16.value),
             GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 300,
@@ -72,6 +82,16 @@ class ExplorePage extends GetView<ExploreController> {
             CustomListSpacing(
                 isVertical: true,
                 spacingValue: ListSpacingValue.spacingV54.value),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Featured Vendors',
+                style: primaryTextTheme.displaySmall,
+              ),
+            ),
+            CustomListSpacing(
+                isVertical: true,
+                spacingValue: ListSpacingValue.spacingV16.value),
             GetX<ExploreController>(builder: (_) {
               return SizedBox(
                 height: 320,
